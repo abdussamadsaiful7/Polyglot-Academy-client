@@ -20,4 +20,4 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
     },
   ]);
 
-  export default router
+  export default router;
