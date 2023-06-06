@@ -3,7 +3,7 @@ import { useEffect } from "react"
 
 const useTitleHook = title =>{
     useEffect(()=>{
-        document.title= `Polyglot Academy - ${title}`;
+        document.title= `Polyglot Academy | ${title}`;
     },[title])
 };
 

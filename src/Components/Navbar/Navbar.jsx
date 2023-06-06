@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo2 from '../../assets/logo2.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     const navTitle =
         <>
@@ -23,25 +31,33 @@ const Navbar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                           { navTitle}
+                            {navTitle}
                         </ul>
                     </div>
                     <div className='flex items-center'>
                         <img className='w-24 h-20' src={logo2} alt="" />
                         <h1> <span className='text-2xl font-semibold text-center text-white'>
                             Polyglot </span><br />
-                            <span className="text-md spaced-text text-white"> Academy</span>
+                            <span className="text-md spaced-text text-white"> A c a d e m y</span>
                         </h1>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                       { navTitle}
+                        {navTitle}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn"> <Link>LOGIN</Link></a>
-                    <a className="btn"><Link>LOGOUT</Link></a>
+                    {
+                        user ?
+                            <>
+                                
+                                <a className="btn"><Link onClick={handleLogOut}>LOGOUT</Link></a>
+                            </>
+                            :
+                            <a className="btn"> <Link to='/login'>LOGIN</Link></a>
+
+                    }
                 </div>
             </div>
         </div>
