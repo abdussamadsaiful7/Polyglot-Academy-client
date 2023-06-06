@@ -27,7 +27,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='flex items-center'>
-                        <img className='w-28 h-20' src={logo2} alt="" />
+                        <img className='w-24 h-20' src={logo2} alt="" />
                         <h1> <span className='text-2xl font-semibold text-center text-white'>
                             Polyglot </span><br />
                             <span className="text-md spaced-text text-white"> Academy</span>
