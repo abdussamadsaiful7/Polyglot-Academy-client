@@ -13,7 +13,7 @@ const AddInstructor = () => {
     const onSubmit = data => {
 
         const formData = new FormData();
-        formData.append('image', data.image[0])
+        formData.append('image', data.photoURL[0])
         fetch(img_url, {
             method: 'POST',
             body: formData

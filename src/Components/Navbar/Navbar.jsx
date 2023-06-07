@@ -16,7 +16,7 @@ const Navbar = () => {
         <>
             <div className='lg:flex items-end justify-end px-6 font-bold text-white'>
                 <li><Link to='/'>HOME</Link></li>
-                <li><Link>INSTRUCTORS</Link></li>
+                <li><Link to='/allInstructor'>INSTRUCTORS</Link></li>
                 <li><Link>CLASSES</Link></li>
                 <li><Link to='/dashboard'>DASHBOARD</Link></li>
             </div>
