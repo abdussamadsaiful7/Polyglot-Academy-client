@@ -23,7 +23,7 @@ const SignUp = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200 login-img py-20">
+            <div className="hero min-h-screen bg-base-200 login-img ">
                 <div className="hero-content md:flex  my-14 md:mx-14 shadow-lg 
                          shadow-black md:pl-10">
                     <div className="text-center lg:text-left">
