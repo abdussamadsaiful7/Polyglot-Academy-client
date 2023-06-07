@@ -1,13 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import UseAxiosSecure from '../../Axious/UseAxiosSecure';
 
 const img_hosting_token = import.meta.env.VITE_Image_token;
 
 const AddClass = () => {
     const { register, handleSubmit, reset } = useForm();
+    const [axiosSecure] = UseAxiosSecure();
     const img_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
     const onSubmit = data => {
-
         const formData = new FormData();
         formData.append('image', data.photoURL[0])
         fetch(img_url, {
@@ -17,33 +19,33 @@ const AddClass = () => {
             .then(res => res.json())
             .then(imgResponse => {
                 console.log(imgResponse);
-                // if (imgResponse.success) {
-                //     const imgURL = imgResponse.data.display_url;
-                //     const { ClassName, price, instructorName, email,  courses, seats, descriptions } = data;
-                //     const newClass = { ClassName, price: parseFloat(price), courses, seats, image: imgURL }
-                //     console.log(newClass)
-                //     axiosSecure.post('/classes', newClass)
-                //         .then(data => {
-                //             console.log('after posting new menu item', data.data)
-                //             if (data.data.insertedId) {
-                //                 reset();
-                //                 // Swal.fire({
-                //                 //     position: 'top-end',
-                //                 //     icon: 'success',
-                //                 //     title: 'Item added Successfully!',
-                //                 //     showConfirmButton: false,
-                //                 //     timer: 1500
-                //                 // })
-                //             }
-                //         })
-                // }
+                if (imgResponse.success) {
+                    const imgURL = imgResponse.data.display_url;
+                    const { ClassName, price, instructorName, email,  courses, seats, descriptions } = data;
+                    const newClass = { ClassName, instructorName, email, descriptions, price: parseFloat(price), courses, seats, image: imgURL }
+                    console.log(newClass)
+                    axiosSecure.post('/classes', newClass)
+                        .then(data => {
+                            console.log('after posting new menu item', data.data)
+                            if (data.data.insertedId) {
+                                reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Item added Successfully!',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
+                }
             })
     }
 
 
 
     return (
-        <div className=''>
+        <div>
             <form onSubmit={handleSubmit(onSubmit)} className="form-control p-4 login-img">
                 <h1 className='text-center font-extrabold text-4xl'>Add Class</h1>
 
