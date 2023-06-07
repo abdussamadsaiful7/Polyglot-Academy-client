@@ -1,0 +1,77 @@
+
+
+
+[
+  {
+    "image": "english.jpg",
+    "name": "English Course",
+    "instructor": "John Smith",
+    "available_seats": 20,
+    "price": 100,
+    "amount_of_students": 26,
+    "details": "This comprehensive English course is designed for learners of all levels. Led by experienced instructor John Smith, the course focuses on building strong communication skills in English through interactive lessons, engaging discussions, and practical exercises. Join us to improve your speaking, listening, reading, and writing abilities."
+  },
+  {
+    "image": "italian.jpg",
+    "name": "Italian Course",
+    "instructor": "Maria Rossi",
+    "available_seats": 15,
+    "price": 120,
+    "amount_of_students": 10,
+    "details": "Immerse yourself in the beauty of the Italian language and culture with our Italian Course. Instructor Maria Rossi will guide you through a journey of language acquisition, covering grammar, vocabulary, and conversational skills. Explore Italy's rich heritage and develop a deep understanding of the language in a supportive learning environment."
+  },
+  {
+    "image": "german.jpg",
+    "name": "German Course",
+    "instructor": "Hans Müller",
+    "available_seats": 18,
+    "price": 110,
+    "amount_of_students": 12,
+    "details": "Discover the fascinating German language with our German Course, led by experienced instructor Hans Müller. Through a dynamic curriculum, you will learn essential grammar structures, expand your vocabulary, and practice speaking and listening skills. Join our course to unlock new opportunities for travel, work, and cultural enrichment."
+  },
+  {
+    "image": "korean.jpg",
+    "name": "Korean Course",
+    "instructor": "Sophia Lee",
+    "available_seats": 25,
+    "price": 150,
+    "amount_of_students": 20,
+    "details": "Embark on a journey into Korean language and culture with our immersive Korean Course. Instructor Sophia Lee will guide you through the complexities of Korean grammar, introduce you to practical vocabulary, and provide ample opportunities for conversation practice. Immerse yourself in Korean traditions and expand your horizons."
+  },
+  {
+    "image": "Italian.jpg",
+    "name": "Italian Course",
+    "instructor": "Luca Bianchi",
+    "available_seats": 22,
+    "price": 130,
+    "amount_of_students": 18,
+    "details": "Venez apprendre le français! Join our Italian Course and explore the language of love and culture. Instructor Luca Bianchi will teach you grammar, pronunciation, and conversation skills, all while delving into the richness of Italian art, cuisine, and literature. Get ready to expand your linguistic abilities and experience the joie de vivre!"
+  },
+  {
+    "image": "spanish.jpg",
+    "name": "Spanish Course",
+    "instructor": "Anika Rahman",
+    "available_seats": 20,
+    "price": 110,
+    "amount_of_students": 16,
+    "details": "¡Bienvenidos! Our Spanish Course is your gateway to mastering one of the world's most widely spoken languages. Led by experienced instructor Anika Rahman, the course covers grammar, vocabulary, and practical conversational skills. Dive into the vibrancy of Hispanic culture and become a confident Spanish speaker."
+  },
+  {
+    "image": "spanish.jpg",
+    "name": "Chinese Course",
+    "instructor": "Ji zin loy",
+    "available_seats": 18,
+    "price": 110,
+    "amount_of_students": 12,
+    "details": "¡Bienvenidos! Our chinese Course is your gateway to mastering one of the world's most widely spoken languages. Led by experienced instructor Ji zin loy, the course covers grammar, vocabulary, and practical conversational skills. Dive into the vibrancy of Hispanic culture and become a confident chinese speaker."
+  },
+  {
+    "image": "spanish.jpg",
+    "name": "Malay Course",
+    "instructor": "Zika zymi",
+    "available_seats": 15,
+    "price": 100,
+    "amount_of_students": 14,
+    "details": "¡Bienvenidos! Our Malay Course is your gateway to mastering one of the world's most widely spoken languages. Led by experienced instructor Zika zymi, the course covers grammar, vocabulary, and practical conversational skills. Dive into the vibrancy of Hispanic culture and become a confident Malay speaker."
+  }
+]
