@@ -14,12 +14,11 @@ const Navbar = () => {
 
     const navTitle =
         <>
-            <div className='lg:flex items-end justify-end px-6 font-bold'>
+            <div className='lg:flex items-end justify-end px-6 font-bold text-white'>
                 <li><Link to='/'>HOME</Link></li>
                 <li><Link>INSTRUCTORS</Link></li>
                 <li><Link>CLASSES</Link></li>
                 <li><Link>DASHBOARD</Link></li>
-                <li><Link>UserPic</Link></li>
             </div>
         </>
     return (

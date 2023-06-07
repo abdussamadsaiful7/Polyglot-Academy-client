@@ -14,7 +14,7 @@ import SignUp from "../Components/SignUp/SignUp";
       errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
-            path: '/home',
+            path: '/',
             element: <Home></Home>
         },
         {
