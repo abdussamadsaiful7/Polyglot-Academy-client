@@ -51,12 +51,16 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                
                                 <a className="btn"><Link onClick={handleLogOut}>LOGOUT</Link></a>
+                                <div className="avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                    <div className="w-10 ml-4 rounded-full 
+                                         ring ring-primary ring-offset-base-100 ring-offset-2">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </div>
                             </>
                             :
                             <a className="btn"> <Link to='/login'>LOGIN</Link></a>
-
                     }
                 </div>
             </div>
