@@ -1,30 +1,47 @@
 import React, { useContext, useState } from 'react';
-import { Link, Navigate, useLoaderData } from 'react-router-dom';
+import { Link, Navigate, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const AllClass = () => {
     const loadAllClass = useLoaderData();
     const [classes, setClasses] = useState(loadAllClass);
-    const [disabled, setDisabled] = useState(false);
     // console.log(loadAllClass)
     const { user } = useContext(AuthContext);
-    console.log(user)
-
-    const notify = () => {
-
-        if (user) {
-            setDisabled(true);
-            toast.success('Your course details is showed!');
 
 
+    const navigate = useNavigate();
+    const location = useLocation();
+   
+    const handleAddCourse = classes => {
+        if(user){
+            fetch('http://localhost:5000/selects')
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    toast.success('Added successfully!')
+                }
+            })
         }
         else {
-            toast.error('Sorry at first login, please!')
-            Navigate('/login')
+            Swal.fire({
+                title: 'At first login, please!',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate('/login', {state: {from: location}})
+                }
+            })
         }
     }
 
+   
     return (
         <div className='py-24 md:px-10 p-4 bg-slate-300'>
             <h1 className='text-center font-extrabold my-10 text-2xl'>ALL COURSES</h1>
@@ -39,8 +56,8 @@ const AllClass = () => {
                             <p>Number of Students: {course.student}</p>
                             <p>Available Seats: {course.seats}</p>
 
-                            <Link  onClick={notify}>
-                                <button disabled={disabled} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
+                            <Link>
+                                <button onClick={()=>handleAddCourse(classes)}  className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
                             </Link>
 
                         </div>

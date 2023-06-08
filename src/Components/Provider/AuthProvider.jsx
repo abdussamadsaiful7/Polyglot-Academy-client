@@ -14,12 +14,12 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
 
-
-
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
+        
     }
+
 
     const signIn = (email, password) => {
         setLoading(true);
@@ -64,6 +64,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         googleLogin,
         updateUserProfile
+      
     }
     return (
         <AuthContext.Provider value={authInfo}>
