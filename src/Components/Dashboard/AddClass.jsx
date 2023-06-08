@@ -21,8 +21,8 @@ const AddClass = () => {
                 console.log(imgResponse);
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
-                    const { ClassName, price, instructorName, email,  courses, seats, descriptions } = data;
-                    const newClass = { ClassName, instructorName, email, descriptions, price: parseFloat(price), courses, seats, image: imgURL }
+                    const { ClassName, price, instructorName, student,  courses, seats, descriptions } = data;
+                    const newClass = { ClassName, instructorName, student, descriptions, price: parseFloat(price), courses, seats, image: imgURL }
                     console.log(newClass)
                     axiosSecure.post('/classes', newClass)
                         .then(data => {
@@ -84,11 +84,11 @@ const AddClass = () => {
                     </div>
                     <div>
                         <label className="label">
-                            <span className="label-text">Instructor Email</span>
+                            <span className="label-text">Number of Student</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" placeholder="email" name="email"
-                                {...register("email", { required: true })} className="input input-bordered w-96" />
+                            <input type="number" placeholder="number of student" name="student"
+                                {...register("student", { required: true })} className="input input-bordered w-96" />
                         </label>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ const AddClass = () => {
                             <span className="label-text">Available Seats</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" placeholder="Available Seats" name="seats"
+                            <input type="number" placeholder="Available Seats" name="seats"
                                 {...register("seats", { required: true })}
                                 className="input input-bordered w-96" />
                         </label>

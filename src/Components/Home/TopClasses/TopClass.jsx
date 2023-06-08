@@ -3,10 +3,10 @@ import useClassHook from '../../../Hook/useClassHook';
 
 const TopClass = () => {
     const [classes] = useClassHook();
-    const sortedClass = classes.sort((a, b) => Number(b.seats) - Number(a.seats));
+    const sortedClass = classes.sort((a, b) => Number(b.student) - Number(a.student));
     const topClass = sortedClass.slice(0, 6);
     // const seats = parseFloat(seats)
-    console.log(topClass)
+    //console.log(topClass)
 
 
     return (
@@ -20,7 +20,7 @@ const TopClass = () => {
                             <p>Course Name: {course.ClassName}</p>
                             <p>Course fee: ${course.price}</p>
                             <p>Instructor Name: {course.instructorName}</p>
-                            <p>Email: {course.email}</p>
+                            <p>Number of Students: {course.student}</p>
                             <p>Available Seats: {course.seats}</p>
                         </div>
 

@@ -17,8 +17,8 @@ const Navbar = () => {
             <div className='lg:flex items-end justify-end px-6 font-bold text-white'>
                 <li><Link to='/'>HOME</Link></li>
                 <li><Link to='/allInstructor'>INSTRUCTORS</Link></li>
-                <li><Link to='/allClass'>CLASSES</Link></li>
-                <li><Link to='/dashboard'>DASHBOARD</Link></li>
+                <li><Link to='/allClass'>COURSES</Link></li>
+               { user && <li><Link to='/dashboard'>DASHBOARD</Link></li>}
             </div>
         </>
     return (

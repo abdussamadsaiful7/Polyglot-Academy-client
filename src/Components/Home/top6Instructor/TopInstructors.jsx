@@ -4,7 +4,7 @@ import useInst from '../../../Hook/useInst';
 const TopInstructors = () => {
     const [instructors] = useInst();
     const popularInst = instructors.filter(item => item.category === "Popular")
-    console.log(popularInst)
+   // console.log(popularInst)
 
 
 

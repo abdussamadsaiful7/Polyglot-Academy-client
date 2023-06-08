@@ -11,6 +11,8 @@ import AddClass from "../Components/Dashboard/AddClass";
 import AddInstructor from "../Components/Dashboard/AddInstructor";
 import AllInstructor from "../Components/AllInstructor/AllInstructor";
 import AllClass from "../Components/AllClass/AllClass";
+import MyClass from "../Components/AllClass/ClassDetails";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -39,6 +41,12 @@ import AllClass from "../Components/AllClass/AllClass";
           element: <AllClass></AllClass>,
           loader: ()=>fetch('http://localhost:5000/classes')
         },
+        // {
+        //   path: 'allClass/:id',
+        //   element: <PrivateRoute><MyClass></MyClass></PrivateRoute>,
+        //   loader: ({params})=>fetch(`http://localhost:5000/classes/${params.id}`)
+
+        // },
         {
           path: '/allInstructor',
           element: <AllInstructor></AllInstructor>,
