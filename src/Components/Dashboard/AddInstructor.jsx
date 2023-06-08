@@ -46,7 +46,7 @@ const AddInstructor = () => {
     return (
         <div className='shadow-lg shadow-sky-400'>
             <form onSubmit={handleSubmit(onSubmit)} className="form-control p-4 login-img">
-                <h1 className='text-center font-extrabold text-4xl'>Add Instructor</h1>
+                <h1 className='text-center font-extrabold text-3xl uppercase'>Add Instructor</h1>
                 {/* instructor name, instructor email section */}
                 <div className='lg:flex items-center justify-center lg:space-x-8'>
                     <div>
@@ -127,7 +127,7 @@ const AddInstructor = () => {
                     </div>
                 </div>
                 <div className='text-center my-4'>
-                    <input className="btn btn-wide btn-outline  border-cyan-400" type="submit" value="Add Instructor" />
+                    <input className="btn btn-wide btn-outline border-2 border-cyan-300" type="submit" value="Add Instructor" />
                 </div>
             </form>
         </div>

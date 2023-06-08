@@ -45,9 +45,9 @@ const AddClass = () => {
 
 
     return (
-        <div className='shadow-lg shadow-red-400'>
+        <div className='shadow-lg shadow-sky-400'>
             <form onSubmit={handleSubmit(onSubmit)} className="form-control p-4 login-img">
-                <h1 className='text-center font-extrabold text-4xl'>Add Class</h1>
+                <h1 className='text-center font-extrabold text-3xl'>ADD COURSE</h1>
 
                 {/* name, price section */}
                 <div className='lg:flex items-center justify-center lg:space-x-8'>
@@ -149,7 +149,7 @@ const AddClass = () => {
                     </div>
                 </div>
                 <div className='text-center my-4'>
-                    <input className="btn btn-wide btn-outline btn-error" type="submit" value="Add Class" />
+                    <input className="btn btn-wide btn-outline border-2 border-cyan-300" type="submit" value="Add Class" />
                 </div>
             </form>
         </div>

@@ -13,6 +13,9 @@ import AllInstructor from "../Components/AllInstructor/AllInstructor";
 import AllClass from "../Components/AllClass/AllClass";
 import MyClass from "../Components/AllClass/ClassDetails";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import MyCourse from "../Components/Dashboard/MyCourse";
+import MyEnrolledCourse from "../Components/Dashboard/MyEnrolledCourse";
+import StudentPayment from "../Components/Dashboard/StudentPayment";
 
   const router = createBrowserRouter([
     {
@@ -59,6 +62,18 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
         {
           path: 'addInstructor',
           element: <AddInstructor></AddInstructor>
+        },
+        {
+          path: 'myCourse',
+          element: <MyCourse></MyCourse>
+        },
+        {
+          path: 'myEnrolledCourse',
+          element: <MyEnrolledCourse></MyEnrolledCourse>
+        },
+        {
+          path: 'StudentPayment',
+          element: <StudentPayment></StudentPayment>
         }
       ]
     }
