@@ -22,16 +22,18 @@ const Navbar = () => {
                 <li><Link to='/'>HOME</Link></li>
                 <li><Link to='/allInstructor'>INSTRUCTORS</Link></li>
                 <li><Link to='/allClass'>COURSES</Link></li>
-                {user && <li><Link to='/dashboard'>DASHBOARD</Link></li>}
                 {user?.email &&
-                    <li>
-                        <Link className='relative mr-4' to='/dashboard/myCart'>
-                            <span className='text-3xl'><FaFolderOpen/></span>
-                            <span className="badge  badge-sm bg-blue-500 absolute 
-                        right-0 left-10 top-0 rounded-[60%]">+{select?.length || 0}</span>
-                        </Link>
-                    </li>
+                    <li><Link to='/dashboard'>DASHBOARD</Link></li>
                 }
+
+                <li>
+                    <Link className='relative mr-4' to='/dashboard/myCourse'>
+                        <span className='text-3xl'><FaFolderOpen /></span>
+                        <span className="badge  badge-sm bg-blue-500 absolute 
+                        right-0 left-10 top-0 rounded-[60%]">+{select?.length || 0}</span>
+                    </Link>
+                </li>
+
             </div>
         </>
     return (

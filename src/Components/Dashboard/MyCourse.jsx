@@ -49,7 +49,7 @@ const MyCourse = () => {
             <div className='uppercase font-extrabold flex justify-evenly items-center mb-2'>
                 <h2>Total orders: {select.length}</h2>
                 <h2>Total price: ${prices}</h2>
-                <Link to='/dashboard/payment'>
+                <Link to='/dashboard/studentPayment'>
                     <button className="btn btn-sm btn-warning">pay</button>
                 </Link>
             </div>
@@ -88,7 +88,7 @@ const MyCourse = () => {
                                     </td>
                                     <td className='text-start'>${item.price}</td>
                                     <td>
-                                        <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-xs bg-red-500 text-white hover:text-red-500"><span ><FaTrashAlt /></span></button>
+                                        <button onClick={() =>handleDelete(item)} className="btn btn-ghost btn-xs bg-red-500 text-white hover:text-red-500"><span ><FaTrashAlt /></span></button>
                                     </td>
                                 </tr>
                             )

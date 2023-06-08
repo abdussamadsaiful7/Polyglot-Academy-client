@@ -16,6 +16,7 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import MyCourse from "../Components/Dashboard/MyCourse";
 import MyEnrolledCourse from "../Components/Dashboard/MyEnrolledCourse";
 import StudentPayment from "../Components/Dashboard/StudentPayment";
+import ManageUsers from "../Components/Dashboard/ManageUsers";
 
   const router = createBrowserRouter([
     {
@@ -74,6 +75,10 @@ import StudentPayment from "../Components/Dashboard/StudentPayment";
         {
           path: 'StudentPayment',
           element: <StudentPayment></StudentPayment>
+        },
+        {
+          path: 'manageUsers',
+          element: <ManageUsers></ManageUsers>
         }
       ]
     }
