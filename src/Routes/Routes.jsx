@@ -41,28 +41,27 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
           element: <AllClass></AllClass>,
           loader: ()=>fetch('http://localhost:5000/classes')
         },
-        // {
-        //   path: 'allClass/:id',
-        //   element: <PrivateRoute><MyClass></MyClass></PrivateRoute>,
-        //   loader: ({params})=>fetch(`http://localhost:5000/classes/${params.id}`)
-
-        // },
         {
           path: '/allInstructor',
           element: <AllInstructor></AllInstructor>,
           loader: ()=>fetch('http://localhost:5000/instructors')
         },
+      ],  
+    },
+    {
+      path: '/dashboard',
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      children: [
         {
-          path: '/addClass',
+          path: 'addClass',
           element: <AddClass></AddClass>
         },
         {
-          path: '/addInstructor',
+          path: 'addInstructor',
           element: <AddInstructor></AddInstructor>
         }
       ]
-      
-    },
+    }
   ]);
 
   export default router;

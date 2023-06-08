@@ -45,7 +45,7 @@ const AddClass = () => {
 
 
     return (
-        <div>
+        <div className='shadow-lg shadow-red-400'>
             <form onSubmit={handleSubmit(onSubmit)} className="form-control p-4 login-img">
                 <h1 className='text-center font-extrabold text-4xl'>Add Class</h1>
 

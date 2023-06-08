@@ -3,10 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
+import useSelectClass from '../../Hook/useSelectClass';
 
 const CourseCard = ({ course }) => {
     console.log(course)
-    const{user} = useContext(AuthContext)
+    const{user} = useContext(AuthContext);
+    const [, refetch] = useSelectClass(); 
 
     const {_id, ClassName, courses, image, instructorName, price, seats, student  } = course;
     const navigate = useNavigate();
@@ -25,6 +27,7 @@ const CourseCard = ({ course }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch();
                         toast.success('Added successfully!')
                     }
                 })

@@ -8,6 +8,7 @@ import useSelectClass from '../../Hook/useSelectClass';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [select] = useSelectClass();
+    ////console.log(select, 'jQQQQ')
 
     const handleLogOut = () => {
         logOut()
