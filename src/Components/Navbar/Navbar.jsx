@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import logo2 from '../../assets/logo2.png'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FaFolderOpen } from "react-icons/fa";
+import useSelectClass from '../../Hook/useSelectClass';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [select] = useSelectClass();
 
     const handleLogOut = () => {
         logOut()
@@ -18,7 +21,16 @@ const Navbar = () => {
                 <li><Link to='/'>HOME</Link></li>
                 <li><Link to='/allInstructor'>INSTRUCTORS</Link></li>
                 <li><Link to='/allClass'>COURSES</Link></li>
-               { user && <li><Link to='/dashboard'>DASHBOARD</Link></li>}
+                {user && <li><Link to='/dashboard'>DASHBOARD</Link></li>}
+                {user?.email &&
+                    <li>
+                        <Link className='relative mr-4' to='/dashboard/myCart'>
+                            <span className='text-3xl'><FaFolderOpen/></span>
+                            <span className="badge  badge-sm bg-blue-500 absolute 
+                        right-0 left-10 top-0 rounded-[60%]">+{select?.length || 0}</span>
+                        </Link>
+                    </li>
+                }
             </div>
         </>
     return (
