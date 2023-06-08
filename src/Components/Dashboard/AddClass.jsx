@@ -107,7 +107,10 @@ const AddClass = () => {
                             <option>Japanese</option>
                             <option>Chinese</option>
                             <option>German</option>
-                            <option>Spanish</option>
+                            <option>France</option>
+                            <option>Malay</option>
+                            <option>Portuguese</option>
+                            <option>Italian</option>
                         </select>
                     </div>
                     <div>

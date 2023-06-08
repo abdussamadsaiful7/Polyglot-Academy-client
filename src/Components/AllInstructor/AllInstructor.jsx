@@ -8,7 +8,7 @@ const AllInstructor = () => {
     return (
         <div className='py-24 md:px-10'>
             <h1 className='text-center font-extrabold my-10'>ALL INSTRUCTORS</h1>
-            <div className='grid md:grid-cols-4 gap-4'>
+            <div className='grid md:grid-cols-3 gap-6'>
                 {
                     instructor.map(inst =>
                         <div key={inst._id}>

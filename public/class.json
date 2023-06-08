@@ -4,12 +4,12 @@
 [
   {
     "image": "english.jpg",
-    "name": "English Course",
-    "instructor": "John Smith",
+    "name": "Arabic Course",
+    "instructor": "Fatima Rahman",
     "available_seats": 20,
     "price": 100,
     "amount_of_students": 26,
-    "details": "This comprehensive English course is designed for learners of all levels. Led by experienced instructor John Smith, the course focuses on building strong communication skills in English through interactive lessons, engaging discussions, and practical exercises. Join us to improve your speaking, listening, reading, and writing abilities."
+    "details": "This comprehensive Arabic course is designed for learners of all levels. Led by experienced instructor fatima, the course focuses on building strong communication skills in Arabic through interactive lessons, engaging discussions, and practical exercises. Join us to improve your speaking, listening, reading, and writing abilities."
   },
   {
     "image": "italian.jpg",
@@ -45,16 +45,16 @@
     "available_seats": 22,
     "price": 130,
     "amount_of_students": 18,
-    "details": "Venez apprendre le français! Join our Italian Course and explore the language of love and culture. Instructor Luca Bianchi will teach you grammar, pronunciation, and conversation skills, all while delving into the richness of Italian art, cuisine, and literature. Get ready to expand your linguistic abilities and experience the joie de vivre!"
+    "details": "Venez apprendre le français! Join our Italian Course and explore the language of love and culture. Instructor Abigail smith will teach you grammar, pronunciation, and conversation skills, all while delving into the richness of Italian art, cuisine, and literature. Get ready to expand your linguistic abilities and experience the joie de vivre!"
   },
   {
     "image": "spanish.jpg",
     "name": "Spanish Course",
-    "instructor": "Anika Rahman",
+    "instructor": "Maria Rossi",
     "available_seats": 20,
     "price": 110,
     "amount_of_students": 16,
-    "details": "¡Bienvenidos! Our Spanish Course is your gateway to mastering one of the world's most widely spoken languages. Led by experienced instructor Anika Rahman, the course covers grammar, vocabulary, and practical conversational skills. Dive into the vibrancy of Hispanic culture and become a confident Spanish speaker."
+    "details": "Our france Course is your gateway to mastering one of the world's most widely spoken languages. Led by experienced instructor Maria Rossi, the course covers grammar, vocabulary, and practical conversational skills. Dive into the vibrancy of Hispanic culture and become a confident france speaker."
   },
   {
     "image": "spanish.jpg",
@@ -72,6 +72,6 @@
     "available_seats": 15,
     "price": 100,
     "amount_of_students": 14,
-    "details": "¡Bienvenidos! Our Malay Course is your gateway to mastering one of the world's most widely spoken languages. Led by experienced instructor Zika zymi, the course covers grammar, vocabulary, and practical conversational skills. Dive into the vibrancy of Hispanic culture and become a confident Malay speaker."
+    "details": " Our Malay Course is your gateway to mastering one of the world's most widely spoken languages. Led by experienced instructor Zika zymi, the course covers grammar, vocabulary, and practical conversational skills. Dive into the vibrancy of Hispanic culture and become a confident Malay speaker."
   }
 ]

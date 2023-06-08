@@ -12,7 +12,7 @@ const AllClass = () => {
                 {
                     classes.map(course =>
                         <div key={course._id} className='text-center'>
-                            <img className='h-64' src={course.image} alt="img" />
+                            <img className='h-64 mx-auto' src={course.image} alt="img" />
                             <p>Course Name: {course.ClassName}</p>
                             <p>Course fee: ${course.price}</p>
                             <p>Instructor Name: {course.instructorName}</p>
