@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useInst from '../../../Hook/useInst';
 
 const TopInstructors = () => {
-    const [tops, setTops] = useState([]);
     const [instructors] = useInst();
     const popularInst = instructors.filter(item => item.category === "Popular")
     console.log(popularInst)
@@ -13,7 +12,7 @@ const TopInstructors = () => {
     return (
         <div className='my-20'>
             <h1 className='text-center font-extrabold text-2xl my-10 uppercase'>Top Instructors in the Polyglot Academy</h1>
-            <div className='grid md:grid-cols-3 gap-4 md:mx-20'>
+            <div className='grid md:grid-cols-3 gap-4 md:mx-20 mx-10'>
                 {
                     popularInst.map(inst =>
                         <div key={inst._id} className='text-center shadow-lg py-4 shadow-red-400'>
