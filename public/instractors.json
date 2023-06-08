@@ -10,11 +10,11 @@
     },
     {
       "image": "instructor2.jpg",
-      "name": "Maria Rossi",
+      "name": "Abigail Rose",
       "email": "maria.rossi@example.com",
       "language_category": "Italian",
       "type": "popular",
-      "details": "Maria Rossi is a native Italian speaker and a dedicated instructor. She has a Bachelor's degree in Italian Literature and extensive experience in teaching Italian as a foreign language. Maria is known for her interactive teaching style and creates a lively and engaging learning environment for her students.",
+      "details": "Abigail Smith is a native spanish speaker and a dedicated instructor. She has a Bachelor's degree in spanish Literature and extensive experience in teaching spanish as a foreign language. Maria is known for her interactive teaching style and creates a lively and engaging learning environment for her students.",
       "taken_class": 10
     },
     {
@@ -39,9 +39,9 @@
       "image": "instructor5.jpg",
       "name": "Luca Bianchi",
       "email": "luca.bianchi@example.com",
-      "language_category": "Italian",
+      "language_category": "Japanese",
       "type": "general",
-      "details": "Luca Bianchi is an enthusiastic Italian instructor who loves to share his passion for the language and culture. He has a degree in Italian Language and Literature and has taught Italian to students of all ages. Luca's teaching approach emphasizes cultural immersion, ensuring students develop a deep understanding of Italy.",
+      "details": "Luca Bianchi is an enthusiastic Japanese instructor who loves to share his passion for the language and culture. He has a degree in Japanese Language and Literature and has taught Japanese to students of all ages. Luca's teaching approach emphasizes cultural immersion, ensuring students develop a deep understanding of Italy.",
       "taken_class": 9
     },
     {
@@ -100,11 +100,11 @@
     },
     {
       "image": "instructor6.jpg",
-      "name": "Anika Rahman",
+      "name": "Charlotte lilly",
       "email": "anika@example.com",
       "language_category": "Spanish",
       "type": "general",
-      "details": "Anika Rahman is a native spanish speaker and an experienced instructor. She has a strong background in teaching spanish as a foreign language and a deep understanding of Arab culture. Fatima is known for her patient and comprehensive teaching style, helping students master the intricacies of the Arabic language.",
+      "details": "Charlotte lilly is a native portuguese speaker and an experienced instructor. She has a strong background in teaching spanish as a foreign language and a deep understanding of Arab culture. lilly is known for her patient and comprehensive teaching style, helping students master the intricacies of the portuguese language.",
       "taken_class": 10
     },
     {

@@ -84,6 +84,10 @@ const AddInstructor = () => {
                             <option>Chinese</option>
                             <option>German</option>
                             <option>Spanish</option>
+                            <option>Malay</option>
+                            <option>France</option>
+                            <option>Italian</option>
+                            <option>portuguese</option>
                         </select>
                     </div>
                     <div>

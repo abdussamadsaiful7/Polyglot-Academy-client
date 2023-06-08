@@ -10,6 +10,7 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 import AddClass from "../Components/Dashboard/AddClass";
 import AddInstructor from "../Components/Dashboard/AddInstructor";
 import AllInstructor from "../Components/AllInstructor/AllInstructor";
+import AllClass from "../Components/AllClass/AllClass";
 
   const router = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ import AllInstructor from "../Components/AllInstructor/AllInstructor";
         {
           path: '/dashboard',
           element: <Dashboard></Dashboard>
+        },
+        {
+          path: '/allClass',
+          element: <AllClass></AllClass>,
+          loader: ()=>fetch('http://localhost:5000/classes')
         },
         {
           path: '/allInstructor',
