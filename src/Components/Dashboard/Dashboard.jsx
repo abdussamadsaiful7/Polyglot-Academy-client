@@ -4,14 +4,16 @@ import AddClass from './AddClass';
 import AddInstructor from './AddInstructor';
 import { FaBookReader, FaFolderOpen, FaHome, FaMoneyCheckAlt, FaRssSquare, FaServer, FaUniversity, FaUserTie, FaUsers } from 'react-icons/fa';
 import useSelectClass from '../../Hook/useSelectClass';
+import useAdmin from '../../Hook/useAdmin';
 
 const Dashboard = () => {
     const [select] = useSelectClass();
 
     //TODO:
-    const isAdmin = true;
+    //const isAdmin = true;
+    const [isAdmin] = useAdmin();
     return (
-        <div className=''>
+        <div >
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">

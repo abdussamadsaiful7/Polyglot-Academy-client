@@ -1,14 +1,42 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import logo2 from '../../assets/logo2.png'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
-import { FaFolderOpen } from "react-icons/fa";
+import { FaCloudSun, FaFolderOpen, FaMoon } from "react-icons/fa";
 import useSelectClass from '../../Hook/useSelectClass';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [select] = useSelectClass();
-    ////console.log(select, 'jQQQQ')
+    const [theme, setTheme] = useState("light");
+
+    useEffect(()=>{
+        if(localStorage.getItem("theme") === null){
+            localStorage.setItem("theme", "light");
+        }
+    },[])
+
+    useEffect(()=>{
+        const html = document.querySelector("html");
+        if(localStorage.getItem("theme") === "dark"){
+            html.classList.add("dark")
+            setTheme("dark");
+        }else{
+            html.classList.remove("dark");
+            setTheme("light")
+        }
+    },[theme])
+
+    const handleTheme =()=>{
+        if(localStorage.getItem("theme") === "light"){
+            setTheme("dark")
+            localStorage.setItem('theme', 'dark')
+        }else{
+            setTheme("light")
+            localStorage.setItem("theme", "light")
+        }
+    };
+
 
     const handleLogOut = () => {
         logOut()
@@ -76,6 +104,12 @@ const Navbar = () => {
                             :
                             <a className="btn"> <Link to='/login'>LOGIN</Link></a>
                     }
+                </div>
+                <div className='ml-4'>
+                    <button   onClick={handleTheme}
+                    className=' rounded text-white text-4xl flex justify-center items-center'>
+                        {theme === "light" ? <FaCloudSun/> : <FaMoon/>}
+                    </button>
                 </div>
             </div>
         </div>

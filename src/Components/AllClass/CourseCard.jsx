@@ -7,10 +7,10 @@ import useSelectClass from '../../Hook/useSelectClass';
 
 const CourseCard = ({ course }) => {
     console.log(course)
-    const{user} = useContext(AuthContext);
-    const [, refetch] = useSelectClass(); 
+    const { user } = useContext(AuthContext);
+    const [, refetch] = useSelectClass();
 
-    const {_id, ClassName, courses, image, instructorName, price, seats, student  } = course;
+    const { _id, ClassName, courses, image, instructorName, price, seats, student } = course;
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -53,22 +53,20 @@ const CourseCard = ({ course }) => {
 
     return (
 
-        <div>
-            
-            <div className='text-center shadow-lg bg-white py-6 px-2'>
-                <img className='h-64 mx-auto' src={image} alt="img" />
-                <p>Course Name: {ClassName}</p>
-                <p>Course fee: ${price}</p>
-                <p>Instructor Name: {instructorName}</p>
-                <p>Number of Students: {student}</p>
-                <p>Available Seats: {seats}</p>
+        <div className='text-center shadow-lg bg-white py-6 px-2 dark:bg-cyan-900 dark:text-white shadow-red-600'>
+            <img className='h-64 mx-auto' src={image} alt="img" />
+            <p>Course Name: {ClassName}</p>
+            <p>Course fee: ${price}</p>
+            <p>Instructor Name: {instructorName}</p>
+            <p>Number of Students: {student}</p>
+            <p>Available Seats: {seats}</p>
 
-                <Link>
-                    <button onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
-                </Link>
+            <Link>
+                <button onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
+            </Link>
 
-            </div>
         </div>
+
 
     );
 };

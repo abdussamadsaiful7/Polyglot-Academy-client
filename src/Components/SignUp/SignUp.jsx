@@ -100,12 +100,17 @@ const SignUp = () => {
                                 {errors.password?.type === 'minLength' && <p className='text-red-500'>password must be 6 character </p>}
                                 {errors.password?.type === 'required' && <p className='text-red-500'>password must be one uppercase, special character</p>}
                             </div>
-                            {/* <div className="form-control">
+                            <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="password" name="confirm" placeholder="password" {...register("confirmPassword", { required: true })}  className="input input-bordered" />  
-                            </div> */}
+                                <input type="password" name="confirm" placeholder="Confirm password" {...register("confirmPassword", { required: true, validate: (value)=>{
+                                    if(watch("password") != value){
+                                        return "Your password not match"
+                                    }
+                                } })}  className="input input-bordered" /> 
+                                {errors.confirmPassword?.type === 'required' && <p className='text-red-500'>Confirm password is required</p>} 
+                            </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Register" />
                             </div>

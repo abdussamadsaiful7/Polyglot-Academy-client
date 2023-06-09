@@ -62,7 +62,7 @@ const ManageUsers = () => {
 
 
     return (
-        <div>
+      
             <div>
                 
                 <h3 className="text-2xl font-extrabold">TOTAL USERS: {users.length}</h3>
@@ -111,7 +111,7 @@ const ManageUsers = () => {
                     </table>
                 </div>
             </div>
-        </div>
+       
     );
 };
 

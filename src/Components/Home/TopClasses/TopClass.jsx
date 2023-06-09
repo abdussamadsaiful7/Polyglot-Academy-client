@@ -10,7 +10,7 @@ const TopClass = () => {
 
 
     return (
-        <div className='my-20'>
+        <div className='my-4 dark:bg-cyan-900 py-10 dark:text-white'>
             <h1 className='text-center font-extrabold text-2xl my-10 uppercase'>Top Course in the Polyglot Academy</h1>
             <div className='grid md:grid-cols-3 gap-4 md:mx-20 mx-10'>
                 {
