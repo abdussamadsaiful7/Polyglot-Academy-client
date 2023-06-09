@@ -3,6 +3,8 @@ import React from 'react';
 import useTitleHook from '../Hook/useTitleHook';
 import UseAxiosSecure from '../../Axious/UseAxiosSecure';
 import { FaBeer, FaTrashAlt, FaUserShield, FaUserTie } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
     useTitleHook('Manage Users')
@@ -22,7 +24,34 @@ const ManageUsers = () => {
         .then(data=>{
             if(data.modifiedCount){
                 refetch();
-                toast.success(`${user.name}`,'is an admin successfully!')
+                // toast.success(`${user.name}`,'is an admin successfully!')
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an admin successfully!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })
+        }
+
+    const handleMakeInstructor =(user)=>{
+        fetch(`http://localhost:5000/users/instructor/${user._id}`,{
+            method: 'PATCH',
+    
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an instructor successfully!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         })
         }
@@ -58,10 +87,9 @@ const ManageUsers = () => {
                                         <td>{user?.name}</td>
                                         <td>{user.email}</td>
                                         <td className='text-center'>
-                                            {user.role === 'Instructor' ? 'Instructor' :
-                                                <button  className="btn btn-ghost btn-xs bg-yellow-500 text-white hover:text-red-500"><span ><FaUserTie/></span>
+                                            {user.role === 'instructor' ? 'instructor' :
+                                                <button onClick={()=>handleMakeInstructor(user)} className="btn btn-ghost btn-xs bg-yellow-500 text-white hover:text-red-500"><span ><FaUserTie/></span>
                                                 </button>
-
                                             }
 
                                         </td>
