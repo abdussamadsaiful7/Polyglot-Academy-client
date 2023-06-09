@@ -4,11 +4,9 @@ import { useContext } from "react";
 import { AuthContext } from "../Components/Provider/AuthProvider";
 
 
-
 const  useSelectClass  = () =>{
     const {user, loading} = useContext(AuthContext);
    const [axiosSecure] = UseAxiosSecure();
-
 
     const { refetch, data: select =[] } = useQuery({
         queryKey: ['selects', user?.email],
