@@ -16,7 +16,7 @@ const Banner = () => {
                     bg-gradient-to-r from-[#151515] to-[rgba(175, 148, 148, 0.0894)]">
                     <div className='text-white dark:text-red-400'>
                         <h2 className='text-6xl pb-8 font-semibold'>Explore the Power   <br />  of Languages here...</h2>
-                        <p className='pb-8'>There are many variations of language courses of  available, and<br /> The majority have completed their courses along with their assignments and they are satisfied</p>
+                        <p className='pb-8'>There are many variations of language courses are  available and<br /> The majority have completed their courses along with their assignments. So, they are satisfied</p>
                         <div>
                             <button className="btn btn-outline  btn-error text-white">Latest Course</button>
                         </div>

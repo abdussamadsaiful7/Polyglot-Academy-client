@@ -17,6 +17,9 @@ import MyCourse from "../Components/Dashboard/MyCourse";
 import MyEnrolledCourse from "../Components/Dashboard/MyEnrolledCourse";
 import StudentPayment from "../Components/Dashboard/StudentPayment";
 import ManageUsers from "../Components/Dashboard/ManageUsers";
+import InstructorRoute from "../Components/PrivateRoute/InstructorRoute";
+import AdminRoute from "../Components/PrivateRoute/AdminRoute";
+import StudentRoute from "../Components/PrivateRoute/StudentRoute";
 
   const router = createBrowserRouter([
     {
@@ -58,11 +61,11 @@ import ManageUsers from "../Components/Dashboard/ManageUsers";
       children: [
         {
           path: 'addClass',
-          element: <AddClass></AddClass>
+          element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
         },
         {
           path: 'addInstructor',
-          element: <AddInstructor></AddInstructor>
+          element: <AdminRoute><AddInstructor></AddInstructor></AdminRoute>
         },
         {
           path: 'myCourse',
@@ -70,7 +73,7 @@ import ManageUsers from "../Components/Dashboard/ManageUsers";
         },
         {
           path: 'myEnrolledCourse',
-          element: <MyEnrolledCourse></MyEnrolledCourse>
+          element: <StudentRoute><MyEnrolledCourse></MyEnrolledCourse></StudentRoute>
         },
         {
           path: 'StudentPayment',
@@ -78,7 +81,7 @@ import ManageUsers from "../Components/Dashboard/ManageUsers";
         },
         {
           path: 'manageUsers',
-          element: <ManageUsers></ManageUsers>
+          element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
         }
       ]
     }

@@ -10,8 +10,8 @@ const ManageUsers = () => {
     useTitleHook('Manage Users')
     const [axiosSecure]= UseAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
 
 

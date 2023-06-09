@@ -21,7 +21,7 @@ const AddClass = () => {
                 console.log(imgResponse);
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
-                    const { ClassName, price, instructorName, student,  courses, seats, descriptions } = data;
+                    const { ClassName, price, instructorName, student, courses, seats, descriptions } = data;
                     const newClass = { ClassName, instructorName, student, descriptions, price: parseFloat(price), courses, seats, image: imgURL }
                     console.log(newClass)
                     axiosSecure.post('/classes', newClass)
@@ -139,7 +139,7 @@ const AddClass = () => {
                     </div>
                     <div>
                         <label className="label">
-                            <span className="label-text">Descriptions</span>
+                            <span className="label-text">Status</span>
                         </label>
                         <label className="input-group">
                             <input type="text" placeholder="descriptions" name="descriptions"
