@@ -9,7 +9,7 @@ const PrivateRoute = ({children}) => {
     const {user, loading } = useContext(AuthContext)
     const location = useLocation();
     //console.log(location)
-    console.log(user)
+   // console.log(user)
 
     if(loading){
         return <progress className="progress progress-error w-56" value="100" max="100"></progress>

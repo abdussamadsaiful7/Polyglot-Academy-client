@@ -7,6 +7,7 @@ const TopClass = () => {
     const topClass = sortedClass.slice(0, 6);
     // const seats = parseFloat(seats)
     //console.log(topClass)
+   
 
 
     return (

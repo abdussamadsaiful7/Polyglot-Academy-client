@@ -1,12 +1,9 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import AddClass from './AddClass';
-import AddInstructor from './AddInstructor';
 import { FaBookReader, FaFolderOpen, FaHome, FaMoneyCheckAlt, FaRssSquare, FaServer, FaUniversity, FaUserTie, FaUsers } from 'react-icons/fa';
 import useSelectClass from '../../Hook/useSelectClass';
 import useAdmin from '../../Hook/useAdmin';
 import useInstructor from '../../Hook/useInstructor';
-import useStudent from '../../Hook/useStudent';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Dashboard = () => {
@@ -17,7 +14,7 @@ const Dashboard = () => {
     //const isAdmin = true;
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
-    const [isStudent] = useStudent();
+   
 
     return (
         <div >
@@ -38,7 +35,7 @@ const Dashboard = () => {
                             isAdmin &&
                             <>
                                 <li><NavLink activeClassName="active" ><FaUniversity />ADMIN HOME</NavLink></li>
-                                <li><NavLink activeClassName="active" ><FaServer />MANAGE STATUS</NavLink></li>
+                                <li><NavLink activeClassName="active" to='/dashboard/manageStatus' ><FaServer />MANAGE STATUS</NavLink></li>
                                 <li><NavLink activeClassName="active" to='/dashboard/manageUsers'>
                                     <FaUsers />MANAGE USERS</NavLink></li>
                                 <li><NavLink activeClassName="active" to='/dashboard/addInstructor'><FaUserTie /> ADD INSTRUCTORS</NavLink></li>
@@ -50,21 +47,7 @@ const Dashboard = () => {
                             isInstructor &&
                             <>
                                 <li><NavLink activeClassName="active" to='/dashboard/addClass'> <FaBookReader /> ADD COURSE</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/myCourse'> <FaBookReader /> ADD COURSE</NavLink></li>
-
-                            </>
-                        }
-
-                        {
-                            isStudent &&
-                            <>
-                                <li><NavLink activeClassName="active" to='/dashboard/myCourse'><FaFolderOpen />
-                                    MY SELECTED COURSE
-                                    <span className="badge  badge-sm bg-blue-500 absolute 
-                                       right-0 left-40 top-0 rounded-[60%]">+{select?.length || 0}</span>
-                                </NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/myEnrolledCourse'><FaRssSquare />MY ENROLLED COURSE</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/studentPayment'><FaMoneyCheckAlt />PAYMENT</NavLink></li>
+                               
 
                             </>
                         }
@@ -72,6 +55,13 @@ const Dashboard = () => {
                         {
                             user &&
                             <>
+
+                                <div className="divider"></div>
+                                <li><NavLink activeClassName="active" to='/dashboard/myCourse'><FaFolderOpen />
+                                    MY SELECTED COURSE</NavLink></li>
+                                <li><NavLink activeClassName="active" to='/dashboard/myEnrolledCourse'><FaRssSquare />MY ENROLLED COURSE</NavLink></li>
+                                <li><NavLink activeClassName="active" to='/dashboard/studentPayment'><FaMoneyCheckAlt />PAYMENT</NavLink></li>
+                                <li><NavLink activeClassName="active" to='/dashboard/historyPayment'><FaMoneyCheckAlt />HISTORY OF PAYMENT</NavLink></li>
                                 <li><NavLink activeClassName="active" to='/'><FaHome />HOME</NavLink></li>
                             </>
                         }

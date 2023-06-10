@@ -9,7 +9,9 @@ const AddClass = () => {
     const { register, handleSubmit, reset } = useForm();
     const [axiosSecure] = UseAxiosSecure();
     const img_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
+
     const onSubmit = data => {
+        data.enroll = 0
         const formData = new FormData();
         formData.append('image', data.photoURL[0])
         fetch(img_url, {
@@ -21,8 +23,8 @@ const AddClass = () => {
                 console.log(imgResponse);
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
-                    const { ClassName, price, instructorName, student, courses, seats, descriptions } = data;
-                    const newClass = { ClassName, instructorName, student, descriptions, price: parseFloat(price), courses, seats, image: imgURL }
+                    const { ClassName, price, instructorName, student, email, descriptions, courses, seats, enroll, status = "pending" } = data;
+                    const newClass = { ClassName, instructorName, student, email, descriptions, status, enroll, price: parseFloat(price), courses, seats, image: imgURL }
                     console.log(newClass)
                     axiosSecure.post('/classes', newClass)
                         .then(data => {
@@ -84,11 +86,34 @@ const AddClass = () => {
                     </div>
                     <div>
                         <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" placeholder="Instructor Email" name="email"
+                                {...register("email", { required: true })} className="input input-bordered w-96" />
+                        </label>
+                    </div>
+
+                </div>
+
+                <div className='lg:flex items-center justify-center lg:space-x-8'>
+                    <div>
+                        <label className="label">
                             <span className="label-text">Number of Student</span>
                         </label>
                         <label className="input-group">
                             <input type="number" placeholder="number of student" name="student"
                                 {...register("student", { required: true })} className="input input-bordered w-96" />
+                        </label>
+                    </div>
+                    <div>
+                        <label className="label">
+                            <span className="label-text">Available Seats</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="number" placeholder="Available Seats" name="seats"
+                                {...register("seats", { required: true })}
+                                className="input input-bordered w-96" />
                         </label>
                     </div>
                 </div>
@@ -111,18 +136,19 @@ const AddClass = () => {
                             <option>Malay</option>
                             <option>Portuguese</option>
                             <option>Italian</option>
+                            <option>Thai</option>
                         </select>
                     </div>
                     <div>
                         <label className="label">
-                            <span className="label-text">Available Seats</span>
+                            <span className="label-text">Descriptions</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" placeholder="Available Seats" name="seats"
-                                {...register("seats", { required: true })}
-                                className="input input-bordered w-96" />
+                            <input type="text" placeholder="descriptions" name="descriptions"
+                                {...register("descriptions", { required: true })} className="input input-bordered w-96" />
                         </label>
                     </div>
+
                 </div>
 
                 {/* Image and descriptions */}
@@ -142,8 +168,8 @@ const AddClass = () => {
                             <span className="label-text">Status</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" placeholder="descriptions" name="descriptions"
-                                {...register("descriptions", { required: true })}
+                            <input type="text" placeholder="status" defaultValue="pending" name="status"
+                                {...register("status", { required: true })}
                                 className="input input-bordered w-96" />
                         </label>
                     </div>

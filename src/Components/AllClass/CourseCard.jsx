@@ -1,20 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-hot-toast';
 import useSelectClass from '../../Hook/useSelectClass';
+import useAdmin from '../../Hook/useAdmin';
+import useInstructor from '../../Hook/useInstructor';
 
 const CourseCard = ({ course }) => {
     console.log(course)
     const { user } = useContext(AuthContext);
     const [, refetch] = useSelectClass();
+    const [disabled, setDisabled] = useState(false);
+
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+
 
     const { _id, ClassName, courses, image, instructorName, price, seats, student } = course;
     const navigate = useNavigate();
     const location = useLocation();
 
     const handleAddCourse = classes => {
+        if (isAdmin || isInstructor) {
+            setDisabled(true)
+        }
         if (user && user?.email) {
             const selectCourse = { courseId: classes._id, ClassName, courses, image, instructorName, price, seats, student, email: user?.email }
             fetch('http://localhost:5000/selects', {
@@ -30,6 +40,7 @@ const CourseCard = ({ course }) => {
                         refetch();
                         toast.success('Added successfully!')
                     }
+
                 })
         }
         else {
@@ -61,9 +72,15 @@ const CourseCard = ({ course }) => {
             <p>Number of Students: {student}</p>
             <p>Available Seats: {seats}</p>
 
-            <Link>
-                <button onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
-            </Link>
+            {isAdmin || isInstructor ?
+                <Link>
+                    <button disabled={true} onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
+                </Link>
+                :
+                <Link to='/dashboard/myCourse'>
+                    <button onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
+                </Link>
+            }
 
         </div>
 

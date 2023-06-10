@@ -11,15 +11,17 @@ import AddClass from "../Components/Dashboard/AddClass";
 import AddInstructor from "../Components/Dashboard/AddInstructor";
 import AllInstructor from "../Components/AllInstructor/AllInstructor";
 import AllClass from "../Components/AllClass/AllClass";
-import MyClass from "../Components/AllClass/ClassDetails";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import MyCourse from "../Components/Dashboard/MyCourse";
-import MyEnrolledCourse from "../Components/Dashboard/MyEnrolledCourse";
-import StudentPayment from "../Components/Dashboard/StudentPayment";
+
+import StudentPayment from "../Components/Dashboard/Payment/StudentPayment";
 import ManageUsers from "../Components/Dashboard/ManageUsers";
 import InstructorRoute from "../Components/PrivateRoute/InstructorRoute";
 import AdminRoute from "../Components/PrivateRoute/AdminRoute";
-import StudentRoute from "../Components/PrivateRoute/StudentRoute";
+import MyEnrolledCourse from "../Components/Dashboard/MyEnrolleCourse/MyEnrolledCourse";
+import HistoryPayment from "../Components/Dashboard/HistoryPayment";
+import ManageStatus from "../Components/Dashboard/ManageStatus/ManageStatus";
+
 
   const router = createBrowserRouter([
     {
@@ -60,12 +62,20 @@ import StudentRoute from "../Components/PrivateRoute/StudentRoute";
       element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children: [
         {
-          path: 'addClass',
-          element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
-        },
-        {
           path: 'addInstructor',
           element: <AdminRoute><AddInstructor></AddInstructor></AdminRoute>
+        },
+        {
+          path: 'manageUsers',
+          element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+        },
+        {
+          path: 'manageStatus',
+          element: <ManageStatus></ManageStatus>
+        },
+        {
+          path: 'addClass',
+          element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
         },
         {
           path: 'myCourse',
@@ -73,15 +83,16 @@ import StudentRoute from "../Components/PrivateRoute/StudentRoute";
         },
         {
           path: 'myEnrolledCourse',
-          element: <StudentRoute><MyEnrolledCourse></MyEnrolledCourse></StudentRoute>
+          element: <MyEnrolledCourse></MyEnrolledCourse>
         },
         {
           path: 'StudentPayment',
           element: <StudentPayment></StudentPayment>
         },
         {
-          path: 'manageUsers',
-          element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+          path: 'historyPayment',
+          element: <HistoryPayment></HistoryPayment>,
+          //loader: ({params})=>fetch(`http://localhost:5000/selects${params.id}`)
         }
       ]
     }

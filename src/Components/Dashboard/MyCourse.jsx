@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useSelectClass from '../../Hook/useSelectClass';
 import useTitleHook from '../Hook/useTitleHook';
 
+
 const MyCourse = () => {
     const [select, refetch] = useSelectClass();
     const total = select.reduce((sum, item) => item.price + sum, 0)
     const prices = parseFloat(total.toFixed(2))
+
 
     useTitleHook('My Course')
 
@@ -49,9 +51,9 @@ const MyCourse = () => {
             <div className='uppercase font-extrabold flex justify-evenly items-center mb-2'>
                 <h2>Total orders: {select.length}</h2>
                 <h2>Total price: ${prices}</h2>
-                <Link to='/dashboard/studentPayment'>
+                {/* <Link to='/dashboard/studentPayment'>
                     <button className="btn btn-sm btn-warning">pay</button>
-                </Link>
+                </Link> */}
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
@@ -88,7 +90,12 @@ const MyCourse = () => {
                                     </td>
                                     <td className='text-start'>${item.price}</td>
                                     <td>
-                                        <button onClick={() =>handleDelete(item)} className="btn btn-ghost btn-xs bg-red-500 text-white hover:text-red-500"><span ><FaTrashAlt /></span></button>
+                                        <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-xs bg-red-500 text-white hover:text-red-500"><span ><FaTrashAlt /></span></button>
+                                    </td>
+                                    <td>
+                                        <Link to='/dashboard/studentPayment'>
+                                            <button className="btn btn-sm btn-warning">pay</button>
+                                        </Link>
                                     </td>
                                 </tr>
                             )
