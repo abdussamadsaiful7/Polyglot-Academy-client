@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBookOpen, FaDungeon, FaShieldAlt } from "react-icons/fa";
-import { Fade , Zoom } from "react-awesome-reveal";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 
 const ExtraTwo = () => {
@@ -12,18 +12,18 @@ const ExtraTwo = () => {
                 </Zoom>
 
                 <div className='grid md:grid-cols-3 gap-6'>
-                    <div>
+
+                    <div className='shadow-lg shadow-sky-400'>
                         <p className='ml-36 text-6xl mb-2 text-yellow-600'> <FaDungeon /></p>
                         <h1 className='text-lg font-extrabold text-center'>OUR MISSION</h1>
                         <div className="divider"></div>
                         <Fade cascade damping={0.4}>
                             <p className='text-gray-500 p-2'>Our mission in foreign language education is to empower individuals with the skills and confidence to communicate effectively in different languages. We strive to provide high-quality language learning programs that promote cultural understanding, foster personal growth, and enhance global communication.
-
-                                We aim to create an immersive and engaging learning environment where students can develop their language.  </p>
+                            We aim to create an immersive and engaging learning environment where students can develop their language.  </p>
                         </Fade>
-
                     </div>
-                    <div>
+
+                    <div className='shadow-lg shadow-sky-400'>
                         <p className='ml-36 text-6xl mb-2 text-yellow-600'><FaBookOpen /></p>
                         <h1 className='text-lg font-extrabold text-center'>WHAT WE DO</h1>
                         <div className="divider"></div>
@@ -32,7 +32,7 @@ const ExtraTwo = () => {
                         </Fade>
 
                     </div>
-                    <div>
+                    <div className='shadow-lg shadow-sky-400'>
 
                         <p className='ml-36 text-6xl mb-2 text-yellow-600'><FaShieldAlt /></p>
 

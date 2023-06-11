@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useSelectClass from '../../Hook/useSelectClass';
 import useTitleHook from '../Hook/useTitleHook';
+import { AuthContext } from '../Provider/AuthProvider';
 
 
 const MyCourse = () => {
     const [select, refetch] = useSelectClass();
     const total = select.reduce((sum, item) => item.price + sum, 0)
     const prices = parseFloat(total.toFixed(2))
+    const {user}=useContext(AuthContext)
 
 
     useTitleHook('My Course')
@@ -25,10 +27,13 @@ const MyCourse = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selects/${item._id}`, {
+                fetch(`https://foreign-school-server.vercel.app/selects/${item._id}`, {
                     method: 'DELETE',
 
                 })
+
+                //${user?.email}&${item?.price}
+
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
@@ -93,7 +98,7 @@ const MyCourse = () => {
                                         <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-xs bg-red-500 text-white hover:text-red-500"><span ><FaTrashAlt /></span></button>
                                     </td>
                                     <td>
-                                        <Link to='/dashboard/studentPayment'>
+                                        <Link to={`/dashboard/studentPayment/${item._id}`}>
                                             <button className="btn btn-sm btn-warning">pay</button>
                                         </Link>
                                     </td>

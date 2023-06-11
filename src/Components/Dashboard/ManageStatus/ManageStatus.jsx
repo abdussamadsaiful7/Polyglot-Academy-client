@@ -3,6 +3,8 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import useClassHook from '../../../Hook/useClassHook';
 import Swal from 'sweetalert2';
 import useTitleHook from '../../Hook/useTitleHook';
+import { FaRegEdit } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const ManageStatus = () => {
@@ -12,7 +14,7 @@ const ManageStatus = () => {
     //console.log(classes)
 
     const handleApproved = (id) => {
-        fetch(`http://localhost:5000/approved/${id}`, {
+        fetch(`https://foreign-school-server.vercel.app/approved/${id}`, {
             method: 'PUT',
         })
             .then(res => res.json())
@@ -31,7 +33,7 @@ const ManageStatus = () => {
     }
 
     const handleDeny = (id) => {
-        fetch(`http://localhost:5000/denied/${id}`, {
+        fetch(`https://foreign-school-server.vercel.app/denied/${id}`, {
             method: 'PUT',
         })
             .then(res => res.json())
@@ -69,6 +71,7 @@ const ManageStatus = () => {
                         <th>Status</th>
                         <th>Approved</th>
                         <th>Denied</th>
+                        <th>Update</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,6 +88,11 @@ const ManageStatus = () => {
                             </td>
                             <td>
                                 <button onClick={() => handleDeny(item._id)} disabled={item.status === 'denied' ? true : false} className="btn btn-ghost btn-outline btn-error btn-xs">denied</button>
+                            </td>
+                            <td>
+                                <Link to={`/dashboard/update/${item._id}`} className='text-xl'>
+                                        <FaRegEdit />
+                                </Link>
                             </td>
                         </tr>
 

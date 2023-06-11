@@ -4,9 +4,9 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import UseAxiosSecure from '../../../Axious/UseAxiosSecure';
 import Swal from 'sweetalert2';
 import useSelectClass from '../../../Hook/useSelectClass';
-import { useLoaderData } from 'react-router-dom';
 
-const CheckoutForm = ({select, price}) => {
+
+const CheckoutForm = ({course, price}) => {
    // const select = useLoaderData([]);
   //  console.log(select)
     const stripe = useStripe();
@@ -86,11 +86,11 @@ const CheckoutForm = ({select, price}) => {
                 transactionId: paymentIntent.id,
                 price,
                 date: new Date(),
-                quantity: select.length,
-                selectItems: select.map(item => item._id),
-                classItems: select.map(item => item.courseId),
+                quantity: course.length,
+                selectItems: course.map(item => item._id),
+                classItems: course.map(item => item.courseId),
                 status: 'Service pending',
-                itemsName: select.map(item => item.ClassName)
+                itemsName: course.map(item => item.ClassName)
             }
 
             axiosSecure.post('/payments', payment)

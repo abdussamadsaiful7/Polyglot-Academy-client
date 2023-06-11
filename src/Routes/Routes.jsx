@@ -22,6 +22,7 @@ import MyEnrolledCourse from "../Components/Dashboard/MyEnrolleCourse/MyEnrolled
 import HistoryPayment from "../Components/Dashboard/HistoryPayment";
 import ManageStatus from "../Components/Dashboard/ManageStatus/ManageStatus";
 import AdminHome from "../Components/Dashboard/AdminHome";
+import Update from "../Components/Dashboard/Update/Update";
 
 
   const router = createBrowserRouter([
@@ -49,12 +50,12 @@ import AdminHome from "../Components/Dashboard/AdminHome";
         {
           path: '/allClass',
           element: <AllClass></AllClass>,
-          loader: ()=>fetch('http://localhost:5000/classes')
+          loader: ()=>fetch('https://foreign-school-server.vercel.app/classes')
         },
         {
           path: '/allInstructor',
           element: <AllInstructor></AllInstructor>,
-          loader: ()=>fetch('http://localhost:5000/instructors')
+          loader: ()=>fetch('https://foreign-school-server.vercel.app/instructors')
         },
       ],  
     },
@@ -83,6 +84,11 @@ import AdminHome from "../Components/Dashboard/AdminHome";
           element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
         },
         {
+          path: 'update/:id',
+          element: <Update></Update>,
+          loader: ({params})=>fetch(`https://foreign-school-server.vercel.app/classes/${params.id}`)
+        },
+        {
           path: 'myCourse',
           element: <MyCourse></MyCourse>
         },
@@ -91,8 +97,9 @@ import AdminHome from "../Components/Dashboard/AdminHome";
           element: <MyEnrolledCourse></MyEnrolledCourse>
         },
         {
-          path: 'StudentPayment',
-          element: <StudentPayment></StudentPayment>
+          path: 'StudentPayment/:id',
+          element: <StudentPayment></StudentPayment>,
+          loader: ({params})=>fetch(`https://foreign-school-server.vercel.app/classes/${params.id}`)
         },
         {
           path: 'historyPayment',

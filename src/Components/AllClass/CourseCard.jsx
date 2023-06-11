@@ -27,7 +27,7 @@ const CourseCard = ({ course }) => {
         }
         if (user && user?.email) {
             const selectCourse = { courseId: classes._id, ClassName, courses, image, instructorName, price, seats, student, email: user?.email }
-            fetch('http://localhost:5000/selects', {
+            fetch('https://foreign-school-server.vercel.app/selects', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -78,7 +78,7 @@ const CourseCard = ({ course }) => {
                     <button disabled={true} onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
                 </Link>
                 :
-                <Link to='/dashboard/myCourse'>
+                <Link>
                     <button onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
                 </Link>
             }

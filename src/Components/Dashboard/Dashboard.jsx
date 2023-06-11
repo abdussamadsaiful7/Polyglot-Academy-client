@@ -38,14 +38,14 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu py-32 w-64 h-full bg-sky-200 text-base-content ">
 
-                        {
+                        { 
                             isAdmin &&
                             <>
-                                <li><NavLink activeClassName="active" to='/dashboard/adminHome' ><FaUniversity />ADMIN HOME</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/manageStatus' ><FaServer />MANAGE STATUS</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/manageUsers'>
+                                <li><NavLink className={"shadow-sm shadow-red-400 "} activeClassName="active" to='/dashboard/adminHome' >< FaUniversity />ADMIN HOME</NavLink></li>
+                                <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/manageStatus' ><FaServer />MANAGE STATUS</NavLink></li>
+                                <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/manageUsers'>
                                     <FaUsers />MANAGE USERS</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/addInstructor'><FaUserTie /> ADD INSTRUCTORS</NavLink></li>
+                                <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/addInstructor'><FaUserTie /> ADD INSTRUCTORS</NavLink></li>
 
                             </>
                         }
@@ -53,7 +53,7 @@ const Dashboard = () => {
                         {
                             isInstructor &&
                             <>
-                                <li><NavLink activeClassName="active" to='/dashboard/addClass'> <FaBookReader /> ADD COURSE</NavLink></li>
+                                <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/addClass'> <FaBookReader /> ADD COURSE</NavLink></li>
 
 
                             </>
@@ -64,12 +64,12 @@ const Dashboard = () => {
                             <>
 
                                 <div className="divider"></div>
-                                <li><NavLink activeClassName="active" to='/dashboard/myCourse'><FaFolderOpen />
+                                <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/myCourse'><FaFolderOpen />
                                     MY SELECTED COURSE</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/myEnrolledCourse'><FaRssSquare />MY ENROLLED COURSE</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/studentPayment'><FaMoneyCheckAlt />PAYMENT</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/dashboard/historyPayment'><FaMoneyCheckAlt />HISTORY OF PAYMENT</NavLink></li>
-                                <li><NavLink activeClassName="active" to='/'><FaHome />HOME</NavLink></li>
+                                <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/myEnrolledCourse'><FaRssSquare />MY ENROLLED COURSE</NavLink></li>
+                                {/* <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/studentPayment'><FaMoneyCheckAlt />PAYMENT</NavLink></li> */}
+                                <li><NavLink className={"shadow-sm shadow-red-400"} activeClassName="active" to='/dashboard/historyPayment'><FaMoneyCheckAlt />HISTORY OF PAYMENT</NavLink></li>
+                                <li><NavLink className={"shadow-sm shadow-red-400 my-2"} activeClassName="active" to='/'><FaHome />HOME</NavLink></li>
                             </>
                         }
 
