@@ -13,3 +13,10 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .adminHome{
+    background: url('./assets/flower-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

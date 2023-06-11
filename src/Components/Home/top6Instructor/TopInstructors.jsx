@@ -20,7 +20,7 @@ const TopInstructors = () => {
                 {
                     popularInst.map(inst =>
                         <div key={inst._id} className='text-center shadow-lg py-4 shadow-red-400'>
-                            <img className='h-64 w-64 mx-auto' src={inst.image} alt="img" />
+                            <img className='h-64  mx-auto w-full transition-transform duration-300 transform hover:scale-110' src={inst.image} alt="img" />
                             <p>Instructor Name: {inst.instructorName}</p>
                             <p>Email: {inst.email}</p>
                             <p>Status: {inst.category}</p>

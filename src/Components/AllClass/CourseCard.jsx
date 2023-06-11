@@ -64,8 +64,9 @@ const CourseCard = ({ course }) => {
 
     return (
 
-        <div className='text-center shadow-lg bg-white py-6 px-2 dark:bg-cyan-900 dark:text-white shadow-red-600'>
-            <img className='h-64 mx-auto' src={image} alt="img" />
+        <div className='text-center shadow-lg bg-white py-6 px-2 relative
+         dark:bg-cyan-900 dark:text-white shadow-red-600'>
+            <img className='h-64 mx-auto w-full transition-transform duration-300 transform hover:scale-110' src={image} alt="img" />
             <p>Course Name: {ClassName}</p>
             <p>Course fee: ${price}</p>
             <p>Instructor Name: {instructorName}</p>

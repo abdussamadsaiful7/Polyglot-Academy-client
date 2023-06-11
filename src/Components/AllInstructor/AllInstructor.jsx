@@ -14,9 +14,9 @@ const AllInstructor = () => {
             <div className='grid md:grid-cols-3 gap-6'>
                 {
                     instructor.map(inst =>
-                        <div key={inst._id} className='shadow-lg p-4 bg-white dark:bg-cyan-900
+                        <div key={inst._id} className='shadow-lg p-4 relative bg-white dark:bg-cyan-900
                          dark:text-white shadow-red-600'>
-                            <img className='h-64' src={inst.image} alt="photo" />
+                            <img className='h-64 w-full transition-transform duration-300 transform hover:scale-110' src={inst.image} alt="photo" />
                             <p>Instructor Name: {inst.instructorName}</p>
                             <p>Email: {inst.email}</p>
                             <p>Status: {inst.category}</p>

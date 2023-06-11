@@ -87,7 +87,7 @@ const Navbar = () => {
                                             </div>
                                         </>
                                         :
-                                        <a className="btn"> <Link to='/login'>LOGIN</Link></a>
+                                        <a className="btn btn-xs"> <Link to='/login'>LOGIN</Link></a>
                                 }
                             </div>
                             <div className='ml-4'>
@@ -115,16 +115,16 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <a className="btn"><Link onClick={handleLogOut}>LOGOUT</Link></a>
+                                <a className="btn btn-outline btn-sm btn-error"><Link onClick={handleLogOut}>LOGOUT</Link></a>
                                 <div className="avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
-                                    <div className="w-10 ml-4  rounded-full 
+                                    <div className="w-8 ml-4  rounded-full 
                                          ring ring-primary ring-offset-base-100 ring-offset-2">
                                         <img src={user?.photoURL} />
                                     </div>
                                 </div>
                             </>
                             :
-                            <a className="btn"> <Link to='/login'>LOGIN</Link></a>
+                            <a className="btn btn-outline btn-sm btn-error"> <Link to='/login'>LOGIN</Link></a>
                     }
                 </div>
                 <div className='md:ml-4 hidden md:block'>
