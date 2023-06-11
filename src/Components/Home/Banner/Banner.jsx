@@ -5,6 +5,7 @@ import turkey3 from '../../../assets/turkey3.jpg'
 import english4 from '../../../assets/english4.jpg'
 import korean5 from '../../../assets/korean5.jpg'
 import arabic6 from '../../../assets/arabic6.jpg'
+import 'animate.css'
 
 const Banner = () => {
     return (
@@ -15,8 +16,11 @@ const Banner = () => {
                 <div className="absolute pb-40 h-full pt-48 px-20  
                     bg-gradient-to-r from-[#151515] to-[rgba(175, 148, 148, 0.0894)]">
                     <div className='text-white dark:text-red-400'>
-                        <h2 className='text-6xl pb-8 font-semibold'>Explore the Power   <br />  of Languages here...</h2>
-                        <p className='pb-8'>There are many variations of language courses are  available and<br /> The majority have completed their courses along with their assignments. So, they are satisfied</p>
+                       
+                            <h2 className='text-6xl pb-8 font-semibold animate__animated animate__backInDown'>Explore the Power   <br />  of Languages here...</h2>
+                       
+
+                        <p className='pb-8 animate__animated animate__backInLeft'>There are many variations of language courses are  available and<br /> The majority have completed their courses along with their assignments. So, they are satisfied</p>
                         <div>
                             <button className="btn btn-outline  btn-error text-white">Latest Course</button>
                         </div>

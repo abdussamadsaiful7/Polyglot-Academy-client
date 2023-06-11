@@ -7,3 +7,9 @@
     background: url('./assets/authentication.png');
     background-position: center;
   }
+.extraTwo{
+    background: url('./assets/bg-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

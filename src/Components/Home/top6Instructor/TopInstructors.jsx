@@ -1,17 +1,21 @@
 import React from 'react';
 import useInst from '../../../Hook/useInst';
+import {  Slide } from "react-awesome-reveal";
 
 const TopInstructors = () => {
     const [instructors] = useInst();
     const popularInst = instructors.filter(item => item.category === "Popular")
-   // console.log(popularInst)
+    // console.log(popularInst)
 
 
 
 
     return (
         <div className='my-2 py-4 dark:bg-cyan-900 dark:text-white'>
-            <h1 className='text-center font-extrabold text-2xl my-10 uppercase'>Top Instructors in the Polyglot Academy</h1>
+            <Slide>
+                <h1 className='text-center font-extrabold text-2xl my-10 uppercase '>Top Instructors in the Polyglot Academy</h1>
+            </Slide>
+
             <div className='grid md:grid-cols-3 gap-4 md:mx-20 mx-10'>
                 {
                     popularInst.map(inst =>

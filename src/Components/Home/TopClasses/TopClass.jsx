@@ -1,6 +1,6 @@
 import React from 'react';
 import useClassHook from '../../../Hook/useClassHook';
-import { motion } from "framer-motion";
+import {  Slide } from "react-awesome-reveal";
 
 const TopClass = () => {
     const [classes] = useClassHook();
@@ -13,7 +13,10 @@ const TopClass = () => {
 
     return (
         <div className='my-4 dark:bg-cyan-900 py-10 dark:text-white'>
-            <h1 className='text-center font-extrabold text-2xl my-10 uppercase'>Top Course in the Polyglot Academy</h1>
+            <Slide>
+                <h1 className='text-center font-extrabold text-2xl my-10 uppercase '>Top Course in the Polyglot Academy</h1>
+            </Slide>
+
             <div className='grid md:grid-cols-3 gap-4 md:mx-20 mx-10'>
                 {
                     topClass.map(course =>

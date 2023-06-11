@@ -21,6 +21,7 @@ import AdminRoute from "../Components/PrivateRoute/AdminRoute";
 import MyEnrolledCourse from "../Components/Dashboard/MyEnrolleCourse/MyEnrolledCourse";
 import HistoryPayment from "../Components/Dashboard/HistoryPayment";
 import ManageStatus from "../Components/Dashboard/ManageStatus/ManageStatus";
+import AdminHome from "../Components/Dashboard/AdminHome";
 
 
   const router = createBrowserRouter([
@@ -68,6 +69,10 @@ import ManageStatus from "../Components/Dashboard/ManageStatus/ManageStatus";
         {
           path: 'manageUsers',
           element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+        },
+        {
+          path: 'adminHome',
+          element: <AdminRoute> <AdminHome></AdminHome> </AdminRoute>
         },
         {
           path: 'manageStatus',
