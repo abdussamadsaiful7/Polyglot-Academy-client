@@ -5,6 +5,8 @@ import useSelectClass from '../../Hook/useSelectClass';
 import useAdmin from '../../Hook/useAdmin';
 import useInstructor from '../../Hook/useInstructor';
 import { AuthContext } from '../Provider/AuthProvider';
+import icon from '../../assets/icon2.png'
+import { Slide ,Zoom } from "react-awesome-reveal";
 
 const Dashboard = () => {
     const [select] = useSelectClass();
@@ -14,15 +16,20 @@ const Dashboard = () => {
     //const isAdmin = true;
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
-   
+
 
     return (
         <div >
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
+                    <Slide>
+                        <h2 className='text-4xl font-bold my-8'>WELCOME TO DASHBOARD</h2>
+                    </Slide>
+                    <Zoom>
+                        <img className='w-32 h-32 mb-4' src={icon} alt="" />
+                    </Zoom>
                     <Outlet></Outlet>
-
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer
                     </label>
 
@@ -47,7 +54,7 @@ const Dashboard = () => {
                             isInstructor &&
                             <>
                                 <li><NavLink activeClassName="active" to='/dashboard/addClass'> <FaBookReader /> ADD COURSE</NavLink></li>
-                               
+
 
                             </>
                         }
