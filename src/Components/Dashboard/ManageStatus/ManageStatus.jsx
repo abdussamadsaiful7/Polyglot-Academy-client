@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import useClassHook from '../../../Hook/useClassHook';
 import Swal from 'sweetalert2';
-import { FaUserTie } from 'react-icons/fa';
-import { toast } from 'react-hot-toast';
+import useTitleHook from '../../Hook/useTitleHook';
+
 
 const ManageStatus = () => {
+    useTitleHook("Manage Status")
     const { user } = useContext(AuthContext);
     const [classes, loading, refetch] = useClassHook();
     //console.log(classes)
@@ -61,6 +62,7 @@ const ManageStatus = () => {
                 <thead className='bg-sky-200'>
                     <tr>
                         <th>No.</th>
+                        <th>Image</th>
                         <th>Course Name</th>
                         <th>Inst. Name</th>
                         <th>Inst. Email</th>
@@ -73,15 +75,16 @@ const ManageStatus = () => {
                     {classes.map((item, index) =>
                         <tr key={item._id}>
                             <td>{index + 1}</td>
+                            <td> <img className='w-12 h-12' src={item.image} alt="photo" /></td>
                             <td>{item.ClassName}</td>
                             <td>{item.instructorName}</td>
                             <td>{item.email}</td>
                             <td>{item.status}</td>
                             <td>
-                                <button onClick={() => handleApproved(item._id)} disabled={item.status === 'approved' ? true : false} className="btn btn-ghost btn-outline btn-xs">approved</button>
+                                <button onClick={() => handleApproved(item._id)} disabled={item.status === 'approved' ? true : false} className="btn btn-ghost btn-outline btn-info btn-xs">approved</button>
                             </td>
                             <td>
-                                <button onClick={() => handleDeny(item._id)} disabled={item.status === 'denied' ? true : false} className="btn btn-ghost btn-outline btn-xs">denied</button>
+                                <button onClick={() => handleDeny(item._id)} disabled={item.status === 'denied' ? true : false} className="btn btn-ghost btn-outline btn-error btn-xs">denied</button>
                             </td>
                         </tr>
 

@@ -10,28 +10,28 @@ const Navbar = () => {
     const [select] = useSelectClass();
     const [theme, setTheme] = useState("light");
 
-    useEffect(()=>{
-        if(localStorage.getItem("theme") === null){
+    useEffect(() => {
+        if (localStorage.getItem("theme") === null) {
             localStorage.setItem("theme", "light");
         }
-    },[])
+    }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         const html = document.querySelector("html");
-        if(localStorage.getItem("theme") === "dark"){
+        if (localStorage.getItem("theme") === "dark") {
             html.classList.add("dark")
             setTheme("dark");
-        }else{
+        } else {
             html.classList.remove("dark");
             setTheme("light")
         }
-    },[theme])
+    }, [theme])
 
-    const handleTheme =()=>{
-        if(localStorage.getItem("theme") === "light"){
+    const handleTheme = () => {
+        if (localStorage.getItem("theme") === "light") {
             setTheme("dark")
             localStorage.setItem('theme', 'dark')
-        }else{
+        } else {
             setTheme("light")
             localStorage.setItem("theme", "light")
         }
@@ -74,6 +74,28 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-gray-500 rounded-box w-52 ">
                             {navTitle}
+                            <div className="navbar-end ml-4 space-y-4">
+                                {
+                                    user ?
+                                        <>
+                                            <a className="btn btn-xs"><Link onClick={handleLogOut}>LOGOUT</Link></a>
+                                            <div className="avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                                <div className="w-8 h-8 rounded-full 
+                                         ring ring-primary ring-offset-base-100 ring-offset-2">
+                                                    <img src={user?.photoURL} />
+                                                </div>
+                                            </div>
+                                        </>
+                                        :
+                                        <a className="btn"> <Link to='/login'>LOGIN</Link></a>
+                                }
+                            </div>
+                            <div className='ml-4'>
+                                <button onClick={handleTheme}
+                                    className=' rounded text-white text-4xl flex justify-center items-center'>
+                                    {theme === "light" ? <FaCloudSun /> : <FaMoon />}
+                                </button>
+                            </div>
                         </ul>
                     </div>
                     <div className='flex items-center'>
@@ -89,13 +111,13 @@ const Navbar = () => {
                         {navTitle}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end hidden md:block">
                     {
                         user ?
                             <>
                                 <a className="btn"><Link onClick={handleLogOut}>LOGOUT</Link></a>
                                 <div className="avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
-                                    <div className="w-10 ml-4 rounded-full 
+                                    <div className="w-10 ml-4  rounded-full 
                                          ring ring-primary ring-offset-base-100 ring-offset-2">
                                         <img src={user?.photoURL} />
                                     </div>
@@ -105,10 +127,10 @@ const Navbar = () => {
                             <a className="btn"> <Link to='/login'>LOGIN</Link></a>
                     }
                 </div>
-                <div className='ml-4'>
-                    <button   onClick={handleTheme}
-                    className=' rounded text-white text-4xl flex justify-center items-center'>
-                        {theme === "light" ? <FaCloudSun/> : <FaMoon/>}
+                <div className='md:ml-4 hidden md:block'>
+                    <button onClick={handleTheme}
+                        className=' rounded text-white text-4xl flex justify-center items-center'>
+                        {theme === "light" ? <FaCloudSun /> : <FaMoon />}
                     </button>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import useClassHook from '../../../Hook/useClassHook';
+import { motion } from "framer-motion";
 
 const TopClass = () => {
     const [classes] = useClassHook();
@@ -7,7 +8,7 @@ const TopClass = () => {
     const topClass = sortedClass.slice(0, 6);
     // const seats = parseFloat(seats)
     //console.log(topClass)
-   
+
 
 
     return (
