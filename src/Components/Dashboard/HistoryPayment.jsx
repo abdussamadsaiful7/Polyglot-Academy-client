@@ -5,18 +5,14 @@ const HistoryPayment = () => {
     const [payment] = usePayment();
  //   console.log(payment)
 
-    // const sortedClass = payment.sort((a, b) => {
-    //     const timestampA = a._id.getTimestamp ? a._id.getTimestamp() : Math.floor(a._id / 1000);
-    //     const timestampB = b._id.getTimestamp ? b._id.getTimestamp() : Math.floor(b._id / 1000);
-    //     return timestampA - timestampB;
-    // });
-    
+   
+
     return (
         <div>
             <h2 className='text-xl font-extrabold text-center my-20 mb-8'>HISTORY OF PAYMENT</h2>
             <div>
                 {
-                    payment.map(item => <div key={item._id}
+                   payment.map(item => <div key={item._id}
                         className='my-8 shadow-lg shadow-emerald-500 p-10'>
                         <p className='text-center mb-2'>Payment History</p>
                         <p>Enroll Date: {item.date}</p>
