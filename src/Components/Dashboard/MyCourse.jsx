@@ -7,11 +7,26 @@ import useTitleHook from '../Hook/useTitleHook';
 import { AuthContext } from '../Provider/AuthProvider';
 
 
+//const [select, refetch] = useSelectClass();
+// const total = select.reduce((sum, item) => item.price + sum, 0)
+// const prices = parseFloat(total.toFixed(2))
+
 const MyCourse = () => {
+    
+
     const [select, refetch] = useSelectClass();
-    const total = select.reduce((sum, item) => item.price + sum, 0)
-    const prices = parseFloat(total.toFixed(2))
-    const {user}=useContext(AuthContext)
+    const total = select.reduce((sum, item) => {
+        const price = parseFloat(item.price);
+        if (!isNaN(price)) {
+            return sum + price;
+        }
+        return sum;
+    }, 0);
+
+    const prices = parseFloat(total.toFixed(2));
+
+
+    const { user } = useContext(AuthContext)
 
 
     useTitleHook('My Course')
@@ -32,7 +47,7 @@ const MyCourse = () => {
 
                 })
 
-                //${user?.email}&${item?.price}
+                    //${user?.email}&${item?.price}
 
                     .then(res => res.json())
                     .then(data => {

@@ -111,6 +111,8 @@ const CheckoutForm = ({course, price}) => {
         }
 
     }
+
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -132,7 +134,8 @@ const CheckoutForm = ({course, price}) => {
                 />
                 <div className='ml-48'>
                     <button className='btn btn-outline btn-wide btn-error mt-8' type="submit" 
-                    disabled={!stripe || !clientSecret || processing}>
+                     disabled={!stripe || !clientSecret || processing}
+                   >
                         Pay
                     </button>
                 </div>
@@ -142,6 +145,8 @@ const CheckoutForm = ({course, price}) => {
                 {transactionId}</p>}
         </>
     );
-};
+}
 
 export default CheckoutForm;
+
+/// disabled={!stripe || !clientSecret || processing}
