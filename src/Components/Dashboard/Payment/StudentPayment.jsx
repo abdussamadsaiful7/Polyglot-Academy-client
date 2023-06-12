@@ -8,9 +8,10 @@ import { useLoaderData } from 'react-router-dom';
 
 
 
-const stripePromise = loadStripe(import.meta.env.VITE_Payment_gateway_pk)
+const stripePromise = loadStripe(import.meta.env.VITE_Payment_pk)
 const StudentPayment = () => {
     const course = useLoaderData();
+    console.log(course)
   // const total = course.reduce((sum,item) => sum + item.price,0);
    const price = parseFloat(course.price).toFixed(2)
    

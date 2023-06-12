@@ -99,7 +99,7 @@ const router = createBrowserRouter([
       {
         path: 'StudentPayment/:id',
         element: <StudentPayment></StudentPayment>,
-        loader: ({ params }) => fetch(`https://foreign-school-server.vercel.app/classes/${params.id}`)
+        loader: ({ params }) => fetch(`https://foreign-school-server.vercel.app/selects/${params.id}`)
       },
       {
         path: 'historyPayment',

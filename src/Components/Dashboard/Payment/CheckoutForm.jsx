@@ -6,9 +6,9 @@ import Swal from 'sweetalert2';
 import useSelectClass from '../../../Hook/useSelectClass';
 
 
-const CheckoutForm = ({course, price}) => {
-   // const select = useLoaderData([]);
-  //  console.log(select)
+const CheckoutForm = ({ course, price }) => {
+    // const select = useLoaderData([]);
+    //  console.log(select)
     const stripe = useStripe();
     const elements = useElements();
     const [, refetch] = useSelectClass();
@@ -28,6 +28,7 @@ const CheckoutForm = ({course, price}) => {
                 })
         }
     }, [price, axiosSecure])
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -58,6 +59,7 @@ const CheckoutForm = ({course, price}) => {
 
         setProcessing(true);
 
+
         const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -76,11 +78,14 @@ const CheckoutForm = ({course, price}) => {
         }
 
 
+
         console.log(paymentIntent)
         setProcessing(false);
+
+
+
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
-            //save payment information to the server
             const payment = {
                 email: user?.email,
                 transactionId: paymentIntent.id,
@@ -93,11 +98,12 @@ const CheckoutForm = ({course, price}) => {
                 itemsName: course.map(item => item.ClassName)
             }
 
+
+
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.insertResult.insertedId) {
-                        
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -111,6 +117,7 @@ const CheckoutForm = ({course, price}) => {
         }
 
     }
+
 
 
     return (
@@ -133,9 +140,9 @@ const CheckoutForm = ({course, price}) => {
                     }}
                 />
                 <div className='ml-48'>
-                    <button className='btn btn-outline btn-wide btn-error mt-8' type="submit" 
-                     disabled={!stripe || !clientSecret || processing}
-                   >
+                    <button className='btn btn-outline btn-wide btn-error mt-8' type="submit"
+                        disabled={!stripe || !clientSecret || processing}
+                    >
                         Pay
                     </button>
                 </div>
