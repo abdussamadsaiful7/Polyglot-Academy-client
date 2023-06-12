@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import CheckoutForm from './CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLoaderData } from 'react-router-dom';
+import usePayment from '../../../Hook/usePayment';
 
 
 
@@ -11,9 +12,10 @@ import { useLoaderData } from 'react-router-dom';
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_pk)
 const StudentPayment = () => {
     const course = useLoaderData();
+    
     console.log(course)
-  // const total = course.reduce((sum,item) => sum + item.price,0);
-   const price = parseFloat(course.price).toFixed(2)
+   // const total = payment.reduce((sum,item) => sum + item.price,0);
+      const price = parseFloat(course.price).toFixed(2)
    
     return (
         <div className='w-3/4'>
