@@ -9,7 +9,8 @@ const MyEnrolledCourse = () => {
     return (
         <div>
             <h2 className='text-xl font-extrabold text-center my-10'>MY ENROLLED COURSES</h2>
-            <div className='grid md:grid-cols-2 gap-4'>
+            <h1>Total Enrolled Students: {payment.length}</h1>
+            <div className=''>
                 {
                     payment.map(pay => <EnrollOne key={pay._id} pay={pay}></EnrollOne>)
                 }

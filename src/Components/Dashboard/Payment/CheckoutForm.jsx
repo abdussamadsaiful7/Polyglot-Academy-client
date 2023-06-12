@@ -86,16 +86,23 @@ const CheckoutForm = ({ course, price }) => {
 
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
+            const { _id, ClassName, courses, image, student, email, courseId, instructorName, seats, price, } = course;
+
             const payment = {
+                image,
+                name: user.displayName,
+                ClassName,
+                instructorName,
+                courses,
+                email,
+                seats,
                 email: user?.email,
+                student,
                 transactionId: paymentIntent.id,
                 price,
-                date: new Date(),
-                quantity: course.length,
-                selectItems: course.map(item => item._id),
-                classItems: course.map(item => item.courseId),
-                status: 'Service pending',
-                itemsName: course.map(item => item.ClassName)
+                courseId,
+                // date: new Date(),
+                selectedId: _id
             }
 
 
@@ -104,6 +111,7 @@ const CheckoutForm = ({ course, price }) => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.insertResult.insertedId) {
+                        refetch();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
