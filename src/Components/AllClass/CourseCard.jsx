@@ -73,7 +73,7 @@ const CourseCard = ({ course }) => {
             <p>Number of Students: {student}</p>
             <p>Available Seats: {seats}</p>
 
-            {isAdmin || isInstructor ?
+            {isAdmin || isInstructor || seats === 0 ?
                 <Link>
                     <button disabled={true} onClick={() => handleAddCourse(course)} className='btn btn-outline btn-sm rounded-none btn-error'>Select</button>
                 </Link>

@@ -19,6 +19,9 @@ const CheckoutForm = ({ course, price }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
 
+
+  //  const [enroll, setEnroll] = useState('')
+
     useEffect(() => {
         if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price })
@@ -86,7 +89,31 @@ const CheckoutForm = ({ course, price }) => {
 
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
-            const { _id, ClassName, courses, image, student, email, courseId, instructorName, seats, price, } = course;
+            const { _id, ClassName, courses, image, student, email, courseId, 
+                instructorName, seats, price, } = course;
+
+                // //update
+                // const updateSeats = enroll.map(up=>{
+                //     if(up._id === course.courseId){
+                //         fetch(`https://foreign-school-server.vercel.app/updateClass/${course.courseId}`,{
+                //             method: 'PUT',
+                //             headers: {
+                //                 "content-type":"application/json"
+                //             },
+                //             body: JSON.stringify({
+                //                 seats: up.seats -1, student: up.student +1
+                //             })
+                //         })
+                //         .then(res =>res.json())
+                //         .then(updateClass =>{
+                //             console.log('updatedClass', updateClass)
+                //         })
+                //     }
+
+                // })
+                // setEnroll(updateSeats);
+
+
 
             const payment = {
                 image,
@@ -147,7 +174,7 @@ const CheckoutForm = ({ course, price }) => {
                         },
                     }}
                 />
-                <div className='ml-48'>
+                <div className='md:ml-48'>
                     <button className='btn btn-outline btn-wide btn-error mt-8' type="submit"
                         disabled={!stripe || !clientSecret || processing}
                     >
