@@ -26,7 +26,7 @@ const CourseCard = ({ course }) => {
             setDisabled(true)
         }
         if (user && user?.email) {
-            const selectCourse = { courseId: classes._id, ClassName, courses, image, instructorName, price, seats, student, email: user?.email }
+            const selectCourse = { courseId: classes._id, ClassName, courses, image, instructorName, price: parseFloat(price), seats: parseInt(seats), student: parseInt(student), email: user?.email }
             fetch('https://foreign-school-server.vercel.app/selects', {
                 method: 'POST',
                 headers: {
@@ -68,10 +68,12 @@ const CourseCard = ({ course }) => {
          dark:bg-cyan-900 dark:text-white shadow-red-600'>
             <img className='h-64 mx-auto w-full transition-transform duration-300 transform hover:scale-110' src={image} alt="img" />
             <p>Course Name: {ClassName}</p>
-            <p>Course fee: ${price}</p>
+            <p>Course fee: ${parseInt(price)}</p>
             <p>Instructor Name: {instructorName}</p>
-            <p>Number of Students: {student}</p>
-            <p>Available Seats: {seats}</p>
+            <p>Number of Students: {parseInt(student)}</p>
+            <p>Available Seats: <span className={seats === 0 ? "text-red-400" : ''}>
+                {parseInt(seats)}</span>
+            </p>
 
             {isAdmin || isInstructor || seats === 0 ?
                 <Link>
@@ -90,3 +92,7 @@ const CourseCard = ({ course }) => {
 };
 
 export default CourseCard;
+
+
+// <p className='text-lg text-emerald-700'>Available seats: <span className={seats === 0 ? "text-red-400" : ''}>{parseInt(seats)}</span></p>
+//           <p className='text-base text-purple-700'>Price:${parseInt(price)}</p>

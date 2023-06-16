@@ -19,7 +19,7 @@ const CheckoutForm = ({ course, price }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
 
-    const [enroll, setEnroll] = useState('')
+    const [enroll, setEnroll] = useState([]);
 
 
     useEffect(() => {
@@ -143,7 +143,7 @@ const CheckoutForm = ({ course, price }) => {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Food added on the cart',
+                            title: 'Added on the cart',
                             showConfirmButton: false,
                             timer: 1500
                         })
