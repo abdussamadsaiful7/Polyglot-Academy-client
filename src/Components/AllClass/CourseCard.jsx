@@ -68,8 +68,8 @@ const CourseCard = ({ course }) => {
          dark:bg-cyan-900 dark:text-white shadow-red-600'>
             <img className='h-64 mx-auto w-full transition-transform duration-300 transform hover:scale-110' src={image} alt="img" />
             <p>Course Name: {ClassName}</p>
-            <p>Course fee: ${parseInt(price)}</p>
             <p>Instructor Name: {instructorName}</p>
+            <p>Course fee: ${parseInt(price)}</p>
             <p>Number of Students: {parseInt(student)}</p>
             <p>Available Seats: <span className={seats === 0 ? "text-red-400" : ''}>
                 {parseInt(seats)}</span>

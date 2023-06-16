@@ -5,6 +5,7 @@ import TopInstructors from '../top6Instructor/TopInstructors';
 import TopClass from '../TopClasses/TopClass';
 import ExtraTwo from '../ExtraSection/ExtraTwo';
 import ExtraSectionThree from '../ExtraSection/ExtraSectionThree';
+import ExtraFour from '../ExtraSection/ExtraFour';
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
         <div>
           <Banner></Banner>
           <ExtraSection></ExtraSection>
+          <ExtraFour></ExtraFour>
           <ExtraSectionThree></ExtraSectionThree>
           <TopClass></TopClass>
           <ExtraTwo></ExtraTwo>

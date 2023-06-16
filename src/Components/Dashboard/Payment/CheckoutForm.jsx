@@ -101,7 +101,7 @@ const CheckoutForm = ({ course, price }) => {
                                 "content-type":"application/json"
                             },
                             body: JSON.stringify({
-                                seats: up.seats -1, student: up.student +1
+                                seats: parseInt( up.seats) -1, student: parseInt(up.student) +1
                             })
                         })
                         .then(res =>res.json())
@@ -123,9 +123,9 @@ const CheckoutForm = ({ course, price }) => {
                 instructorName,
                 courses,
                 email,
-                seats,
+                seats:parseInt(seats),
                 email: user?.email,
-                student,
+                student:parseInt(student),
                 transactionId: paymentIntent.id,
                 price,
                 courseId,
