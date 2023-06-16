@@ -19,8 +19,8 @@ const CheckoutForm = ({ course, price }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
 
+    const [enroll, setEnroll] = useState('')
 
-  //  const [enroll, setEnroll] = useState('')
 
     useEffect(() => {
         if (price > 0) {
@@ -92,26 +92,27 @@ const CheckoutForm = ({ course, price }) => {
             const { _id, ClassName, courses, image, student, email, courseId, 
                 instructorName, seats, price, } = course;
 
-                // //update
-                // const updateSeats = enroll.map(up=>{
-                //     if(up._id === course.courseId){
-                //         fetch(`https://foreign-school-server.vercel.app/updateClass/${course.courseId}`,{
-                //             method: 'PUT',
-                //             headers: {
-                //                 "content-type":"application/json"
-                //             },
-                //             body: JSON.stringify({
-                //                 seats: up.seats -1, student: up.student +1
-                //             })
-                //         })
-                //         .then(res =>res.json())
-                //         .then(updateClass =>{
-                //             console.log('updatedClass', updateClass)
-                //         })
-                //     }
+                 //update
+                 const updateSeats = enroll.map(up=>{
+                    if(up._id === course.courseId){
+                        fetch(`http://localhost:5050/updateClass/${course.courseId}`,{
+                            method: 'PUT',
+                            headers: {
+                                "content-type":"application/json"
+                            },
+                            body: JSON.stringify({
+                                seats: up.seats -1, student: up.student +1
+                            })
+                        })
+                        .then(res =>res.json())
+                        .then(updateClass =>{
+                            console.log('updatedClass', updateClass)
+                        })
+                    }
 
-                // })
-                // setEnroll(updateSeats);
+                })
+                setEnroll(updateSeats);
+
 
 
 
