@@ -6,6 +6,7 @@ import TopClass from '../TopClasses/TopClass';
 import ExtraTwo from '../ExtraSection/ExtraTwo';
 import ExtraSectionThree from '../ExtraSection/ExtraSectionThree';
 import ExtraFour from '../ExtraSection/ExtraFour';
+import BannerCard from '../Banner/BannerCard';
 
 
 
@@ -14,6 +15,7 @@ const Home = () => {
         <div>
           <Banner></Banner>
           <ExtraSection></ExtraSection>
+          <BannerCard></BannerCard>
           <ExtraFour></ExtraFour>
           <ExtraSectionThree></ExtraSectionThree>
           <TopClass></TopClass>
