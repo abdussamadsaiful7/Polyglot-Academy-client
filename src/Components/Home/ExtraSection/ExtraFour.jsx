@@ -7,7 +7,7 @@ import site from '../../../assets/site.png'
 
 const ExtraFour = () => {
     return (
-        <div className=' md:mx-14 mx-32 py-10'>
+        <div className=' md:mx-14 py-10'>
             <div className='grid md:grid-cols-4 shadow-xl md:divide-x'>
                 <div className='mx-auto p-10'>
                     <div className='flex'>

@@ -6,7 +6,7 @@ import pic3 from '../../../assets/knowledge.jpg'
 
 const BannerCard = () => {
     return (
-        <div className='my-20 mx-14 grid md:grid-cols-3 gap-4 h-[200px]'>
+        <div className='my-20 md:mx-14 grid md:grid-cols-3 gap-4 md:h-[200px]'>
             <div className='card mt-4 mx-auto'>
                 <div className='imgBox'>
                     <img src={pic1} alt="" />
