@@ -1,4 +1,4 @@
-.card{
+.BCard{
     position: relative;
     width: 350px;
     height:200px;
@@ -11,7 +11,7 @@
      
 }
 
-.card:hover{
+.BCard:hover{
     height: 300px;
 
 }
@@ -39,7 +39,7 @@
     transition: 0.3s;
 }
 
-.card:hover > .content{
+.BCard:hover > .content{
     opacity: 1;
     transform: translateY(-50px)
 }

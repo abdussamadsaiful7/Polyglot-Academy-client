@@ -8,7 +8,7 @@ const BannerCard = () => {
     return (
         <div className='dark:bg-cyan-900 pb-24'>
             <div className='py-20 md:px-14 grid md:grid-cols-3 gap-4 md:h-[200px]'>
-                <div className='card mt-4 mx-auto'>
+                <div className='BCard mt-4 mx-auto'>
                     <div className='imgBox'>
                         <img src={pic1} alt="" />
                     </div>
@@ -17,7 +17,7 @@ const BannerCard = () => {
                         <p className='font-extralight text-xs'> personalized attention, student support services, inclusive environment, and continuous improvement are some of the key factors that contribute to our commitment to providing the best care at our language academy.</p>
                     </div>
                 </div>
-                <div className='card mt-4 mx-auto'>
+                <div className='BCard mt-4 mx-auto'>
                     <div className='imgBox'>
                         <img src={pic2} alt="" />
                     </div>
@@ -26,7 +26,7 @@ const BannerCard = () => {
                         <p className='font-extralight text-xs'>Our language academy is proud to have the best teachers in the industry. Our instructors are highly experienced, qualified, and dedicated to helping students achieve their language learning goals.</p>
                     </div>
                 </div>
-                <div className='card mt-4 mx-auto'>
+                <div className='BCard mt-4 mx-auto'>
                     <div className='imgBox'>
                         <img src={pic3} alt="" />
                     </div>
