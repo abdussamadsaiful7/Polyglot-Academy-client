@@ -41,5 +41,5 @@
 
 .BCard:hover > .content{
     opacity: 1;
-    transform: translateY(-50px)
+    transform: translateY(-120px)
 }
